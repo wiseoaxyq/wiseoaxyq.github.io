@@ -4418,6 +4418,9 @@
 	.post-content img{
 		max-width:100%; 
 	}
+	.post_page_title_img{
+		height:13rem !important;
+	}
 	.post_page_title_img a{
 		position:absolute;
 		text-shadow:6px 5px 10px #000;

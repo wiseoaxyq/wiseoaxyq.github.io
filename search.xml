@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>DIY PC监视器</title>
+    <url>/2021/08/07/diy-monitor/</url>
+    <content><![CDATA[<h3 id="这是我第一次动手废物利用。"><a href="#这是我第一次动手废物利用。" class="headerlink" title="这是我第一次动手废物利用。"></a>这是我第一次动手废物利用。</h3><h4 id="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"><a href="#在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。" class="headerlink" title="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"></a>在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</h4><h4 id="需要准备的东西："><a href="#需要准备的东西：" class="headerlink" title="需要准备的东西："></a>需要准备的东西：</h4><ol>
+<li>烂了，但不完全烂的平板电脑一台 <del>（至少屏幕是好的）</del></li>
+<li>显示驱动板一块</li>
+</ol>
+<h4 id="首先，先将平板电脑的屏幕拆下："><a href="#首先，先将平板电脑的屏幕拆下：" class="headerlink" title="首先，先将平板电脑的屏幕拆下："></a>首先，先将平板电脑的屏幕拆下：</h4><blockquote>
+<p>一. 先将后盖、侧边的螺丝拧下来<br><img src="/2021/08/07/diy-monitor/imgs/1.jpg" alt="后盖" width="auto" height="300"><br>二. 将后盖撬开<br>三. 主板上的螺丝拧下（因为其它部件基本都烂了，用不上，所以我就不还原了，随便拆了）<br><img src="/2021/08/07/diy-monitor/imgs/2.jpg" alt="后盖" width="auto" height="300"><br>四. 拆下电池、主板、松开液晶屏与触摸屏的排线<br><img src="/2021/08/07/diy-monitor/imgs/3.jpg" alt="后盖" width="auto" height="300"><br>五. 清理液晶屏后盖<br>六. 拆完之后装回去就是这样啦！(探索版YYDS)<br><img src="/2021/08/07/diy-monitor/imgs/4.jpg" alt="后盖" width="auto" height="300">   </p>
+</blockquote>
+<img src="/2021/08/07/diy-monitor/imgs/5.jpg" alt="后盖" width="auto" height="300">
+ 
+<h4 id="这样一块完美的7寸液晶屏幕就诞生啦！"><a href="#这样一块完美的7寸液晶屏幕就诞生啦！" class="headerlink" title="这样一块完美的7寸液晶屏幕就诞生啦！"></a>这样一块完美的7寸液晶屏幕就诞生啦！</h4><h4 id="然后，就等我的显示驱动板送货了…花了我50大洋…"><a href="#然后，就等我的显示驱动板送货了…花了我50大洋…" class="headerlink" title="然后，就等我的显示驱动板送货了…花了我50大洋…"></a>然后，就等我的显示驱动板送货了…花了我50大洋…</h4><h5 id="我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦-）"><a href="#我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦-）" class="headerlink" title="我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）"></a>我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）</h5><img src="/2021/08/07/diy-monitor/imgs/6.jpg" alt="后盖" width="auto" height="300"> 
+
+<h6 id="触摸屏没坏的小伙伴可以买有触摸控制的板子哦"><a href="#触摸屏没坏的小伙伴可以买有触摸控制的板子哦" class="headerlink" title="触摸屏没坏的小伙伴可以买有触摸控制的板子哦"></a>触摸屏没坏的小伙伴可以买有触摸控制的板子哦</h6><blockquote>
+<p>视频驱动板的安装就更简单啦：<br>直接将视频排线接上，然后祈祷不翻车，接通电源开机点亮<br><video src="imgs/1.mp4" controls="controls" width="300" height="auto">测试</video></p>
+</blockquote>
+<h4 id="然后把线走好！"><a href="#然后把线走好！" class="headerlink" title="然后把线走好！"></a>然后把线走好！</h4><img src="/2021/08/07/diy-monitor/imgs/7.jpg" alt="后盖" width="auto" height="300"> 
+
+<h4 id="完美"><a href="#完美" class="headerlink" title="完美"></a>完美</h4><h4 id="接下来让我们看看效果："><a href="#接下来让我们看看效果：" class="headerlink" title="接下来让我们看看效果："></a>接下来让我们看看效果：</h4><p><video src="imgs/2.mp4" controls="controls" width="300" height="auto">测试</video><br><img src="/2021/08/07/diy-monitor/imgs/8.jpg" alt="后盖" width="auto" height="300"> </p>
+<img src="/2021/08/07/diy-monitor/imgs/9.jpg" alt="效果" width="auto" height="300">
+
+<h4 id="可以监控CPU调度和温度（NICE-）"><a href="#可以监控CPU调度和温度（NICE-）" class="headerlink" title="可以监控CPU调度和温度（NICE!）"></a>可以监控CPU调度和温度（NICE!）</h4>]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><h4 id="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"><a href="#首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）" class="headerlink" title="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"></a>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）</h4><h4 id="右键选择-“git-bash-here”-前提是你已经装了git（不是）"><a href="#右键选择-“git-bash-here”-前提是你已经装了git（不是）" class="headerlink" title="右键选择 “git bash here”  前提是你已经装了git（不是）"></a>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></h4><blockquote>
+<p>输入：<br><code>$ git init</code></p>
+</blockquote>
+<h4 id="这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）"><a href="#这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）" class="headerlink" title="这时候你的文件夹里会出现 .git 这样一个文件夹 （是隐藏的）"></a>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em></h4><h4 id="这时候你的本地版本库就算已经建好啦！"><a href="#这时候你的本地版本库就算已经建好啦！" class="headerlink" title="这时候你的本地版本库就算已经建好啦！"></a>这时候你的本地版本库就算已经建好啦！</h4><h4 id="现在，我们先编写一个-readme-txt-文件，内容如下："><a href="#现在，我们先编写一个-readme-txt-文件，内容如下：" class="headerlink" title="现在，我们先编写一个 readme.txt 文件，内容如下："></a>现在，我们先编写一个 readme.txt 文件，内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<h4 id="放到你git版本库的目录下-（子目录也可以哦）"><a href="#放到你git版本库的目录下-（子目录也可以哦）" class="headerlink" title="放到你git版本库的目录下 （子目录也可以哦）"></a>放到你git版本库的目录下 <em>（子目录也可以哦）</em></h4><h4 id="接下来就可以开始将你的文件放进git仓库了"><a href="#接下来就可以开始将你的文件放进git仓库了" class="headerlink" title="接下来就可以开始将你的文件放进git仓库了"></a>接下来就可以开始将你的文件放进git仓库了</h4><h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code></p>
+<h6 id="说明记录会保存到-readme-txt-文件中"><a href="#说明记录会保存到-readme-txt-文件中" class="headerlink" title="说明记录会保存到 readme.txt 文件中"></a>说明记录会保存到 readme.txt 文件中</h6><h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><h4 id="我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。"><a href="#我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。" class="headerlink" title="我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。"></a>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</h4><h4 id="首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！"><a href="#首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！" class="headerlink" title="首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！"></a>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</h4><h4 id="接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令："><a href="#接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令：" class="headerlink" title="接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令："></a>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：</h4><p><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<h4 id="添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。"><a href="#添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。" class="headerlink" title="添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。"></a>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</h4><h4 id="下一步就可以将本地库的所有内容推送到远程库上了："><a href="#下一步就可以将本地库的所有内容推送到远程库上了：" class="headerlink" title="下一步就可以将本地库的所有内容推送到远程库上了："></a>下一步就可以将本地库的所有内容推送到远程库上了：</h4><p><code>$ git push origin master //master是分支名称</code>  </p>
+<h4 id="推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了"><a href="#推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了" class="headerlink" title="推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了"></a>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</h4><h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><h4 id="有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"><a href="#有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系" class="headerlink" title="有时候 ssh 不小心输错了，可以通过$ git remote rm origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"></a>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</h4><h4 id="在删除链接前，可以先用-git-remote-v查看远程库信息"><a href="#在删除链接前，可以先用-git-remote-v查看远程库信息" class="headerlink" title="在删除链接前，可以先用$ git remote -v查看远程库信息"></a>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</h4><h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>First&#39;s Note</title>
     <url>/2021/08/02/firstnote/</url>
     <content><![CDATA[<h2 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h2><h3 id="就记录下Markdown的一些基础语法吧。"><a href="#就记录下Markdown的一些基础语法吧。" class="headerlink" title="就记录下Markdown的一些基础语法吧。"></a>就记录下Markdown的一些基础语法吧。</h3><h3 id="1、标题"><a href="#1、标题" class="headerlink" title="1、标题"></a>1、标题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
@@ -93,68 +155,6 @@
       </categories>
       <tags>
         <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git的使用</title>
-    <url>/2021/08/03/gitusage/</url>
-    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><h4 id="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"><a href="#首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）" class="headerlink" title="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"></a>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）</h4><h4 id="右键选择-“git-bash-here”-前提是你已经装了git（不是）"><a href="#右键选择-“git-bash-here”-前提是你已经装了git（不是）" class="headerlink" title="右键选择 “git bash here”  前提是你已经装了git（不是）"></a>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></h4><blockquote>
-<p>输入：<br><code>$ git init</code></p>
-</blockquote>
-<h4 id="这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）"><a href="#这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）" class="headerlink" title="这时候你的文件夹里会出现 .git 这样一个文件夹 （是隐藏的）"></a>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em></h4><h4 id="这时候你的本地版本库就算已经建好啦！"><a href="#这时候你的本地版本库就算已经建好啦！" class="headerlink" title="这时候你的本地版本库就算已经建好啦！"></a>这时候你的本地版本库就算已经建好啦！</h4><h4 id="现在，我们先编写一个-readme-txt-文件，内容如下："><a href="#现在，我们先编写一个-readme-txt-文件，内容如下：" class="headerlink" title="现在，我们先编写一个 readme.txt 文件，内容如下："></a>现在，我们先编写一个 readme.txt 文件，内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
-<h4 id="放到你git版本库的目录下-（子目录也可以哦）"><a href="#放到你git版本库的目录下-（子目录也可以哦）" class="headerlink" title="放到你git版本库的目录下 （子目录也可以哦）"></a>放到你git版本库的目录下 <em>（子目录也可以哦）</em></h4><h4 id="接下来就可以开始将你的文件放进git仓库了"><a href="#接下来就可以开始将你的文件放进git仓库了" class="headerlink" title="接下来就可以开始将你的文件放进git仓库了"></a>接下来就可以开始将你的文件放进git仓库了</h4><h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
-<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code></p>
-<h6 id="说明记录会保存到-readme-txt-文件中"><a href="#说明记录会保存到-readme-txt-文件中" class="headerlink" title="说明记录会保存到 readme.txt 文件中"></a>说明记录会保存到 readme.txt 文件中</h6><h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
-<li><ol>
-<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
-<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><h4 id="我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。"><a href="#我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。" class="headerlink" title="我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。"></a>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</h4><h4 id="首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！"><a href="#首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！" class="headerlink" title="首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！"></a>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</h4><h4 id="接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令："><a href="#接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令：" class="headerlink" title="接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令："></a>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：</h4><p><code>$ git remote add origin &lt;ssh&gt;</code></p>
-<h4 id="添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。"><a href="#添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。" class="headerlink" title="添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。"></a>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</h4><h4 id="下一步就可以将本地库的所有内容推送到远程库上了："><a href="#下一步就可以将本地库的所有内容推送到远程库上了：" class="headerlink" title="下一步就可以将本地库的所有内容推送到远程库上了："></a>下一步就可以将本地库的所有内容推送到远程库上了：</h4><p><code>$ git push origin master //master是分支名称</code>  </p>
-<h4 id="推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了"><a href="#推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了" class="headerlink" title="推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了"></a>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</h4><h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><h4 id="有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"><a href="#有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系" class="headerlink" title="有时候 ssh 不小心输错了，可以通过$ git remote rm origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"></a>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</h4><h4 id="在删除链接前，可以先用-git-remote-v查看远程库信息"><a href="#在删除链接前，可以先用-git-remote-v查看远程库信息" class="headerlink" title="在删除链接前，可以先用$ git remote -v查看远程库信息"></a>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</h4><h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
-<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DIY PC监视器</title>
-    <url>/2021/08/07/diy-monitor/</url>
-    <content><![CDATA[<h3 id="这是我第一次动手废物利用。"><a href="#这是我第一次动手废物利用。" class="headerlink" title="这是我第一次动手废物利用。"></a>这是我第一次动手废物利用。</h3><h4 id="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"><a href="#在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。" class="headerlink" title="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"></a>在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</h4><h4 id="需要准备的东西："><a href="#需要准备的东西：" class="headerlink" title="需要准备的东西："></a>需要准备的东西：</h4><ol>
-<li>烂了，但不完全烂的平板电脑一台 <del>（至少屏幕是好的）</del></li>
-<li>显示驱动板一块</li>
-</ol>
-<h4 id="首先，先将平板电脑的屏幕拆下："><a href="#首先，先将平板电脑的屏幕拆下：" class="headerlink" title="首先，先将平板电脑的屏幕拆下："></a>首先，先将平板电脑的屏幕拆下：</h4><blockquote>
-<p>一. 先将后盖、侧边的螺丝拧下来<br><img src="/2021/08/07/diy-monitor/imgs/1.jpg" alt="后盖" width="auto" height="300"><br>二. 将后盖撬开<br>三. 主板上的螺丝拧下（因为其它部件基本都烂了，用不上，所以我就不还原了，随便拆了）<br><img src="/2021/08/07/diy-monitor/imgs/2.jpg" alt="后盖" width="auto" height="300"><br>四. 拆下电池、主板、松开液晶屏与触摸屏的排线<br><img src="/2021/08/07/diy-monitor/imgs/3.jpg" alt="后盖" width="auto" height="300"><br>五. 清理液晶屏后盖<br>六. 拆完之后装回去就是这样啦！(探索版YYDS)<br><img src="/2021/08/07/diy-monitor/imgs/4.jpg" alt="后盖" width="auto" height="300">   </p>
-</blockquote>
-<img src="/2021/08/07/diy-monitor/imgs/5.jpg" alt="后盖" width="auto" height="300">
- 
-<h4 id="这样一块完美的7寸液晶屏幕就诞生啦！"><a href="#这样一块完美的7寸液晶屏幕就诞生啦！" class="headerlink" title="这样一块完美的7寸液晶屏幕就诞生啦！"></a>这样一块完美的7寸液晶屏幕就诞生啦！</h4><h4 id="然后，就等我的显示驱动板送货了…花了我50大洋…"><a href="#然后，就等我的显示驱动板送货了…花了我50大洋…" class="headerlink" title="然后，就等我的显示驱动板送货了…花了我50大洋…"></a>然后，就等我的显示驱动板送货了…花了我50大洋…</h4><h5 id="我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦-）"><a href="#我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦-）" class="headerlink" title="我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）"></a>我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）</h5><img src="/2021/08/07/diy-monitor/imgs/6.jpg" alt="后盖" width="auto" height="300"> 
-
-<h6 id="触摸屏没坏的小伙伴可以买有触摸控制的板子哦"><a href="#触摸屏没坏的小伙伴可以买有触摸控制的板子哦" class="headerlink" title="触摸屏没坏的小伙伴可以买有触摸控制的板子哦"></a>触摸屏没坏的小伙伴可以买有触摸控制的板子哦</h6><blockquote>
-<p>视频驱动板的安装就更简单啦：<br>直接将视频排线接上，然后祈祷不翻车，接通电源开机点亮<br><video src="imgs/1.mp4" controls="controls" width="300" height="auto">测试</video></p>
-</blockquote>
-<h4 id="然后把线走好！"><a href="#然后把线走好！" class="headerlink" title="然后把线走好！"></a>然后把线走好！</h4><img src="/2021/08/07/diy-monitor/imgs/7.jpg" alt="后盖" width="auto" height="300"> 
-
-<h4 id="完美"><a href="#完美" class="headerlink" title="完美"></a>完美</h4><h4 id="接下来让我们看看效果："><a href="#接下来让我们看看效果：" class="headerlink" title="接下来让我们看看效果："></a>接下来让我们看看效果：</h4><p><video src="imgs/2.mp4" controls="controls" width="300" height="auto">测试</video><br><img src="/2021/08/07/diy-monitor/imgs/8.jpg" alt="后盖" width="auto" height="300"> </p>
-<img src="/2021/08/07/diy-monitor/imgs/9.jpg" alt="效果" width="auto" height="300">
-
-<h4 id="可以监控CPU调度和温度（NICE-）"><a href="#可以监控CPU调度和温度（NICE-）" class="headerlink" title="可以监控CPU调度和温度（NICE!）"></a>可以监控CPU调度和温度（NICE!）</h4>]]></content>
-      <categories>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>

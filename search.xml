@@ -128,24 +128,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/07/24/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>DIY PC监视器</title>
     <url>/2021/08/07/diy-monitor/</url>
     <content><![CDATA[<h3 id="这是我第一次动手废物利用。"><a href="#这是我第一次动手废物利用。" class="headerlink" title="这是我第一次动手废物利用。"></a>这是我第一次动手废物利用。</h3><h4 id="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"><a href="#在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。" class="headerlink" title="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"></a>在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</h4><h4 id="需要准备的东西："><a href="#需要准备的东西：" class="headerlink" title="需要准备的东西："></a>需要准备的东西：</h4><ol>
@@ -174,5 +156,23 @@
       <tags>
         <tag>DIY</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/07/24/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>

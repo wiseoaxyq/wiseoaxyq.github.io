@@ -858,7 +858,7 @@
 		#gallery_thumbnails article {
 			position: relative;
 			width: 50%;
-			background: #101010;
+			background: #ffffff;
 			outline: 0;
 		}
 
@@ -1081,6 +1081,7 @@
 			height: 100%;
 			opacity: 1;
 			z-index: 1;
+			background-color: #fff;
 		}
 
 			#viewer .slide .caption {

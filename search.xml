@@ -128,6 +128,38 @@
       </tags>
   </entry>
   <entry>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><h4 id="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"><a href="#首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）" class="headerlink" title="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"></a>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）</h4><h4 id="右键选择-“git-bash-here”-前提是你已经装了git（不是）"><a href="#右键选择-“git-bash-here”-前提是你已经装了git（不是）" class="headerlink" title="右键选择 “git bash here”  前提是你已经装了git（不是）"></a>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></h4><blockquote>
+<p>输入：<br><code>$ git init</code></p>
+</blockquote>
+<h4 id="这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）"><a href="#这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）" class="headerlink" title="这时候你的文件夹里会出现 .git 这样一个文件夹 （是隐藏的）"></a>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em></h4><h4 id="这时候你的本地版本库就算已经建好啦！"><a href="#这时候你的本地版本库就算已经建好啦！" class="headerlink" title="这时候你的本地版本库就算已经建好啦！"></a>这时候你的本地版本库就算已经建好啦！</h4><h4 id="现在，我们先编写一个-readme-txt-文件，内容如下："><a href="#现在，我们先编写一个-readme-txt-文件，内容如下：" class="headerlink" title="现在，我们先编写一个 readme.txt 文件，内容如下："></a>现在，我们先编写一个 readme.txt 文件，内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<h4 id="放到你git版本库的目录下-（子目录也可以哦）"><a href="#放到你git版本库的目录下-（子目录也可以哦）" class="headerlink" title="放到你git版本库的目录下 （子目录也可以哦）"></a>放到你git版本库的目录下 <em>（子目录也可以哦）</em></h4><h4 id="接下来就可以开始将你的文件放进git仓库了"><a href="#接下来就可以开始将你的文件放进git仓库了" class="headerlink" title="接下来就可以开始将你的文件放进git仓库了"></a>接下来就可以开始将你的文件放进git仓库了</h4><h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code></p>
+<h6 id="说明记录会保存到-readme-txt-文件中"><a href="#说明记录会保存到-readme-txt-文件中" class="headerlink" title="说明记录会保存到 readme.txt 文件中"></a>说明记录会保存到 readme.txt 文件中</h6><h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><h4 id="我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。"><a href="#我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。" class="headerlink" title="我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。"></a>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</h4><h4 id="首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！"><a href="#首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！" class="headerlink" title="首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！"></a>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</h4><h4 id="接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令："><a href="#接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令：" class="headerlink" title="接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令："></a>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：</h4><p><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<h4 id="添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。"><a href="#添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。" class="headerlink" title="添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。"></a>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</h4><h4 id="下一步就可以将本地库的所有内容推送到远程库上了："><a href="#下一步就可以将本地库的所有内容推送到远程库上了：" class="headerlink" title="下一步就可以将本地库的所有内容推送到远程库上了："></a>下一步就可以将本地库的所有内容推送到远程库上了：</h4><p><code>$ git push origin master //master是分支名称</code>  </p>
+<h4 id="推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了"><a href="#推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了" class="headerlink" title="推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了"></a>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</h4><h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><h4 id="有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"><a href="#有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系" class="headerlink" title="有时候 ssh 不小心输错了，可以通过$ git remote rm origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"></a>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</h4><h4 id="在删除链接前，可以先用-git-remote-v查看远程库信息"><a href="#在删除链接前，可以先用-git-remote-v查看远程库信息" class="headerlink" title="在删除链接前，可以先用$ git remote -v查看远程库信息"></a>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</h4><h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/07/24/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -166,38 +198,6 @@
 <h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><h5 id="打开redis的安装目录，打开redis-windows-conf文件，找到port-将端口号更改为需要的端口号。"><a href="#打开redis的安装目录，打开redis-windows-conf文件，找到port-将端口号更改为需要的端口号。" class="headerlink" title="打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。"></a>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。</h5><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300">
 
 <h5 id="之后重启redis服务即可。"><a href="#之后重启redis服务即可。" class="headerlink" title="之后重启redis服务即可。"></a>之后重启redis服务即可。</h5>]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git的使用</title>
-    <url>/2021/08/03/gitusage/</url>
-    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><h4 id="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"><a href="#首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）" class="headerlink" title="首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）"></a>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）</h4><h4 id="右键选择-“git-bash-here”-前提是你已经装了git（不是）"><a href="#右键选择-“git-bash-here”-前提是你已经装了git（不是）" class="headerlink" title="右键选择 “git bash here”  前提是你已经装了git（不是）"></a>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></h4><blockquote>
-<p>输入：<br><code>$ git init</code></p>
-</blockquote>
-<h4 id="这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）"><a href="#这时候你的文件夹里会出现-git-这样一个文件夹-（是隐藏的）" class="headerlink" title="这时候你的文件夹里会出现 .git 这样一个文件夹 （是隐藏的）"></a>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em></h4><h4 id="这时候你的本地版本库就算已经建好啦！"><a href="#这时候你的本地版本库就算已经建好啦！" class="headerlink" title="这时候你的本地版本库就算已经建好啦！"></a>这时候你的本地版本库就算已经建好啦！</h4><h4 id="现在，我们先编写一个-readme-txt-文件，内容如下："><a href="#现在，我们先编写一个-readme-txt-文件，内容如下：" class="headerlink" title="现在，我们先编写一个 readme.txt 文件，内容如下："></a>现在，我们先编写一个 readme.txt 文件，内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
-<h4 id="放到你git版本库的目录下-（子目录也可以哦）"><a href="#放到你git版本库的目录下-（子目录也可以哦）" class="headerlink" title="放到你git版本库的目录下 （子目录也可以哦）"></a>放到你git版本库的目录下 <em>（子目录也可以哦）</em></h4><h4 id="接下来就可以开始将你的文件放进git仓库了"><a href="#接下来就可以开始将你的文件放进git仓库了" class="headerlink" title="接下来就可以开始将你的文件放进git仓库了"></a>接下来就可以开始将你的文件放进git仓库了</h4><h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
-<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code></p>
-<h6 id="说明记录会保存到-readme-txt-文件中"><a href="#说明记录会保存到-readme-txt-文件中" class="headerlink" title="说明记录会保存到 readme.txt 文件中"></a>说明记录会保存到 readme.txt 文件中</h6><h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
-<li><ol>
-<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
-<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><h4 id="我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。"><a href="#我一般习惯将代码托管到-GitHub-上，那么-git-的远程仓库就很管用啦。" class="headerlink" title="我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。"></a>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</h4><h4 id="首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！"><a href="#首先，我们登录-GitHub-，创建一个新的-repository-仓库，这样我们就拥有了一个远程仓库啦！" class="headerlink" title="首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！"></a>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</h4><h4 id="接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令："><a href="#接着，回到要上传到远程仓库的本地仓库，右键-git-bash-here，输入以下命令：" class="headerlink" title="接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令："></a>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：</h4><p><code>$ git remote add origin &lt;ssh&gt;</code></p>
-<h4 id="添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。"><a href="#添加后，远程库的名字就是-origin，这是Git的默认叫法，也可以改成其它的。" class="headerlink" title="添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。"></a>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</h4><h4 id="下一步就可以将本地库的所有内容推送到远程库上了："><a href="#下一步就可以将本地库的所有内容推送到远程库上了：" class="headerlink" title="下一步就可以将本地库的所有内容推送到远程库上了："></a>下一步就可以将本地库的所有内容推送到远程库上了：</h4><p><code>$ git push origin master //master是分支名称</code>  </p>
-<h4 id="推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了"><a href="#推送成功后，可以立刻查看-GitHub-上的内容，已经跟本地的一模一样了" class="headerlink" title="推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了"></a>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</h4><h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><h4 id="有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"><a href="#有时候-ssh-不小心输错了，可以通过-git-remote-rm-origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系" class="headerlink" title="有时候 ssh 不小心输错了，可以通过$ git remote rm origin来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系"></a>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</h4><h4 id="在删除链接前，可以先用-git-remote-v查看远程库信息"><a href="#在删除链接前，可以先用-git-remote-v查看远程库信息" class="headerlink" title="在删除链接前，可以先用$ git remote -v查看远程库信息"></a>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</h4><h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
-<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
-</ol>
-]]></content>
       <categories>
         <category>note</category>
       </categories>

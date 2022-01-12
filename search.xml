@@ -44,6 +44,50 @@
       </tags>
   </entry>
   <entry>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
+<blockquote>
+<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
+</blockquote>
+<span id="more"></span>
+
+<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
+<p>接下来就可以开始将你的文件放进git仓库了</p>
+<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
+<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
+<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
+<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
+<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
+<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
+<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
+<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>First&#39;s Note</title>
     <url>/2021/08/02/firstnote/</url>
     <content><![CDATA[<h2 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h2><h3 id="就记录下Markdown的一些基础语法吧。"><a href="#就记录下Markdown的一些基础语法吧。" class="headerlink" title="就记录下Markdown的一些基础语法吧。"></a>就记录下Markdown的一些基础语法吧。</h3><span id="more"></span>
@@ -135,50 +179,6 @@
 <center>
     <img src="https://z3.ax1x.com/2021/08/16/f2Hzo6.png" width="100" height="100">
 </center>]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git的使用</title>
-    <url>/2021/08/03/gitusage/</url>
-    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
-<blockquote>
-<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
-</blockquote>
-<span id="more"></span>
-
-<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
-<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
-<p>接下来就可以开始将你的文件放进git仓库了</p>
-<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
-<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
-<li><ol>
-<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
-<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
-<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
-<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
-<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
-<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
-<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
-<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
-<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
-<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
-<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
-</ol>
-]]></content>
       <categories>
         <category>note</category>
       </categories>

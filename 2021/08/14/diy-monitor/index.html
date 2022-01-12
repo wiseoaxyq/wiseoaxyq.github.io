@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wiseoaxyq.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="这是我第一次动手废物利用。在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。">
+<meta name="description" content="这是我第一次动手废物利用。 在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DIY PC监视器">
 <meta property="og:url" content="http://wiseoaxyq.github.io/2021/08/14/diy-monitor/index.html">
 <meta property="og:site_name" content="SG&#39;s Notes">
-<meta property="og:description" content="这是我第一次动手废物利用。在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。">
+<meta property="og:description" content="这是我第一次动手废物利用。 在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://z3.ax1x.com/2021/08/16/f2biSe.jpg">
 <meta property="og:image" content="https://z3.ax1x.com/2021/08/16/f2beTP.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://z3.ax1x.com/2021/08/16/f2bVeI.jpg">
 <meta property="og:image" content="https://z3.ax1x.com/2021/08/16/f2buY8.jpg">
 <meta property="article:published_time" content="2021-08-14T08:28:07.000Z">
-<meta property="article:modified_time" content="2022-01-12T03:57:27.680Z">
+<meta property="article:modified_time" content="2022-01-12T07:10:05.183Z">
 <meta property="article:author" content="学绅">
 <meta property="article:tag" content="DIY">
 <meta name="twitter:card" content="summary">
@@ -159,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E6%88%91%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8A%A8%E6%89%8B%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">这是我第一次动手废物利用。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E4%B8%80%E6%AC%A1%E6%95%B4%E7%90%86%E4%B8%AD%EF%BC%8C%E5%81%B6%E7%84%B6%E7%9A%84%E5%8F%91%E7%8E%B0%E4%BA%86%E4%B8%80%E5%8F%B0%E7%83%82%E4%BA%86%E7%9A%84%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%EF%BC%8C%E6%8B%86%E5%BC%80%E4%B8%80%E7%9C%8B%EF%BC%8C%E4%B8%BB%E6%9D%BF%E5%9F%BA%E6%9C%AC%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E4%BA%86%EF%BC%8C%E8%A7%A6%E6%91%B8%E5%B1%8F%E4%B9%9F%E5%A4%B1%E7%81%B5%E4%BA%86%E3%80%82%E6%9C%AC%E6%83%B3%E7%9D%80%E5%BD%93%E5%9E%83%E5%9C%BE%E6%89%94%E4%BA%86%EF%BC%8C%E5%8F%88%E6%83%B3%E4%BA%86%E6%83%B3%EF%BC%8C%E6%88%91%E9%82%A3%E5%8F%B0%E6%9C%8D%E5%BD%B9%E4%BA%86%E5%87%A0%E5%B9%B4%E7%9A%84%E6%88%98%E7%A5%9EZ7M%EF%BC%8C%E6%89%93%E6%B8%B8%E6%88%8F%E6%97%B6%EF%BC%8C%E5%8F%91%E7%83%AD%E8%B4%9F%E8%BD%BD%E6%9C%89%E7%82%B9%E9%AB%98%EF%BC%8C%E6%83%B3%E7%9D%80%E8%83%BD%E4%B8%8D%E8%83%BD%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8%EF%BC%8C%E5%B0%86%E5%B9%B3%E6%9D%BF%E7%9A%84%E5%B1%8F%E5%B9%95%E6%94%B9%E6%88%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E6%9F%A5%E7%9C%8BCPU%E8%B4%9F%E8%BD%BD%E5%92%8C%E6%B8%A9%E5%BA%A6%E7%9A%84%E7%9B%91%E6%8E%A7%E5%99%A8%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87%E7%9A%84%E4%B8%9C%E8%A5%BF%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">需要准备的东西：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A6%96%E5%85%88%EF%BC%8C%E5%85%88%E5%B0%86%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E7%9A%84%E5%B1%8F%E5%B9%95%E6%8B%86%E4%B8%8B%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">首先，先将平板电脑的屏幕拆下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%99%E6%A0%B7%E4%B8%80%E5%9D%97%E5%AE%8C%E7%BE%8E%E7%9A%847%E5%AF%B8%E6%B6%B2%E6%99%B6%E5%B1%8F%E5%B9%95%E5%B0%B1%E8%AF%9E%E7%94%9F%E5%95%A6%EF%BC%81"><span class="nav-number">1.4.</span> <span class="nav-text">这样一块完美的7寸液晶屏幕就诞生啦！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%EF%BC%8C%E5%B0%B1%E7%AD%89%E6%88%91%E7%9A%84%E6%98%BE%E7%A4%BA%E9%A9%B1%E5%8A%A8%E6%9D%BF%E9%80%81%E8%B4%A7%E4%BA%86%E2%80%A6%E8%8A%B1%E4%BA%86%E6%88%9150%E5%A4%A7%E6%B4%8B%E2%80%A6"><span class="nav-number">1.5.</span> <span class="nav-text">然后，就等我的显示驱动板送货了…花了我50大洋…</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%88%91%E4%B9%B0%E7%9A%84%E6%98%BE%E7%A4%BA%E9%A9%B1%E5%8A%A8%E6%9D%BF%E6%98%AF50%E9%92%88%E7%9A%84%E5%8D%95%E8%A7%86%E9%A2%91%E9%A9%B1%E5%8A%A8%EF%BC%8Chdmi%E8%BE%93%E5%87%BA%EF%BC%8C%E5%8D%96%E5%AE%B6%E8%BF%98%E9%80%81%E4%BA%86%E6%8E%A7%E5%88%B6%E6%9D%BF%E5%92%8C%E9%81%A5%E6%8E%A7%E5%99%A8%EF%BC%88%E4%B8%8D%E7%9F%A5%E9%81%93%E8%87%AA%E5%B7%B1%E5%B1%8F%E5%B9%95%E6%8E%92%E7%BA%BF%E6%98%AF%E5%A4%9A%E5%B0%91%E9%92%88%E7%9A%84%E5%8F%AF%E4%BB%A5%E9%97%AE%E9%97%AE%E5%8D%96%E5%AE%B6%E5%93%A6-%EF%BC%89"><span class="nav-number">1.5.1.</span> <span class="nav-text">我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E5%B1%8F%E6%B2%A1%E5%9D%8F%E7%9A%84%E5%B0%8F%E4%BC%99%E4%BC%B4%E5%8F%AF%E4%BB%A5%E4%B9%B0%E6%9C%89%E8%A7%A6%E6%91%B8%E6%8E%A7%E5%88%B6%E7%9A%84%E6%9D%BF%E5%AD%90%E5%93%A6"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">触摸屏没坏的小伙伴可以买有触摸控制的板子哦</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E6%8A%8A%E7%BA%BF%E8%B5%B0%E5%A5%BD%EF%BC%81"><span class="nav-number">1.6.</span> <span class="nav-text">然后把线走好！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E7%BE%8E"><span class="nav-number">1.7.</span> <span class="nav-text">完美</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%AE%A9%E6%88%91%E4%BB%AC%E7%9C%8B%E7%9C%8B%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-number">1.8.</span> <span class="nav-text">接下来让我们看看效果：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E7%9B%91%E6%8E%A7CPU%E8%B0%83%E5%BA%A6%E5%92%8C%E6%B8%A9%E5%BA%A6%EF%BC%88NICE-%EF%BC%89"><span class="nav-number">1.9.</span> <span class="nav-text">可以监控CPU调度和温度（NICE!）</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87%E7%9A%84%E4%B8%9C%E8%A5%BF%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">一、需要准备的东西：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%8B%86%E6%9C%BA%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">二、拆机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%88%90%E5%93%81%E6%95%88%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">三、成品效果</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -168,7 +168,7 @@
     <img class="site-author-image" itemprop="image" alt="学绅"
       src="https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg">
   <p class="site-author-name" itemprop="name">学绅</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">Peace and love</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -229,7 +229,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg">
       <meta itemprop="name" content="学绅">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="Peace and love">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -255,7 +255,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 11:57:27" itemprop="dateModified" datetime="2022-01-12T11:57:27+08:00">2022-01-12</time>
+      <time title="修改时间：2022-01-12 15:10:05" itemprop="dateModified" datetime="2022-01-12T15:10:05+08:00">2022-01-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,28 +277,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="这是我第一次动手废物利用。"><a href="#这是我第一次动手废物利用。" class="headerlink" title="这是我第一次动手废物利用。"></a>这是我第一次动手废物利用。</h3><h4 id="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"><a href="#在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。" class="headerlink" title="在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。"></a>在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</h4><span id="more"></span>
+        <p>这是我第一次动手废物利用。</p>
+<p>在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</p>
 
-<h4 id="需要准备的东西："><a href="#需要准备的东西：" class="headerlink" title="需要准备的东西："></a>需要准备的东西：</h4><ol>
+<span id="more"></span>
+
+<h4 id="一、需要准备的东西："><a href="#一、需要准备的东西：" class="headerlink" title="一、需要准备的东西："></a>一、需要准备的东西：</h4><ol>
 <li>烂了，但不完全烂的平板电脑一台 <del>（至少屏幕是好的）</del></li>
 <li>显示驱动板一块</li>
 </ol>
-<h4 id="首先，先将平板电脑的屏幕拆下："><a href="#首先，先将平板电脑的屏幕拆下：" class="headerlink" title="首先，先将平板电脑的屏幕拆下："></a>首先，先将平板电脑的屏幕拆下：</h4><blockquote>
-<p>一. 先将后盖、侧边的螺丝拧下来<br><img src="https://z3.ax1x.com/2021/08/16/f2biSe.jpg" alt="后盖" width="auto" height="300"><br>二. 将后盖撬开<br>三. 主板上的螺丝拧下（因为其它部件基本都烂了，用不上，所以我就不还原了，随便拆了）<br><img src="https://z3.ax1x.com/2021/08/16/f2beTP.png" alt="后盖" width="auto" height="300"><br>四. 拆下电池、主板、松开液晶屏与触摸屏的排线<br><img src="https://z3.ax1x.com/2021/08/16/f2bKfS.png" alt="后盖" width="auto" height="300"><br>五. 清理液晶屏后盖<br>六. 拆完之后装回去就是这样啦！(探索版YYDS)<br><img src="https://z3.ax1x.com/2021/08/16/f2b9JO.jpg" alt="探索版" width="auto" height="300">   </p>
+<h4 id="二、拆机："><a href="#二、拆机：" class="headerlink" title="二、拆机："></a>二、拆机：</h4><p>首先，先将平板电脑的屏幕拆下：</p>
+<blockquote>
+<p> 1、先将后盖、侧边的螺丝拧下来<br><img src="https://z3.ax1x.com/2021/08/16/f2biSe.jpg" alt="后盖" width="auto" height="300"><br>2、 将后盖撬开<br>3、 主板上的螺丝拧下（因为其它部件基本都烂了，用不上，所以我就不还原了，随便拆了）<br><img src="https://z3.ax1x.com/2021/08/16/f2beTP.png" alt="后盖" width="auto" height="300"><br>4、 拆下电池、主板、松开液晶屏与触摸屏的排线<br><img src="https://z3.ax1x.com/2021/08/16/f2bKfS.png" alt="后盖" width="auto" height="300"><br>5、 清理液晶屏后盖<br>6、 拆完之后装回去就是这样啦！(探索版YYDS)<br><img src="https://z3.ax1x.com/2021/08/16/f2b9JO.jpg" alt="探索版" width="auto" height="300">   </p>
 </blockquote>
 <img src="https://z3.ax1x.com/2021/08/16/f2bCWD.jpg" alt="屏幕" width="auto" height="300">
  
-<h4 id="这样一块完美的7寸液晶屏幕就诞生啦！"><a href="#这样一块完美的7寸液晶屏幕就诞生啦！" class="headerlink" title="这样一块完美的7寸液晶屏幕就诞生啦！"></a>这样一块完美的7寸液晶屏幕就诞生啦！</h4><h4 id="然后，就等我的显示驱动板送货了…花了我50大洋…"><a href="#然后，就等我的显示驱动板送货了…花了我50大洋…" class="headerlink" title="然后，就等我的显示驱动板送货了…花了我50大洋…"></a>然后，就等我的显示驱动板送货了…花了我50大洋…</h4><h5 id="我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦-）"><a href="#我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦-）" class="headerlink" title="我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）"></a>我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）</h5><img src="https://z3.ax1x.com/2021/08/16/f2bkyd.jpg" alt="驱动板" width="auto" height="300"> 
-
-<h6 id="触摸屏没坏的小伙伴可以买有触摸控制的板子哦"><a href="#触摸屏没坏的小伙伴可以买有触摸控制的板子哦" class="headerlink" title="触摸屏没坏的小伙伴可以买有触摸控制的板子哦"></a>触摸屏没坏的小伙伴可以买有触摸控制的板子哦</h6><blockquote>
+<p>这样一块完美的7寸液晶屏幕就诞生啦！<br>然后，就等我的显示驱动板送货了…花了我50大洋…</p>
+<p>我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）<br><img src="https://z3.ax1x.com/2021/08/16/f2bkyd.jpg" alt="驱动板" width="auto" height="300"> </p>
+<p>触摸屏没坏的小伙伴可以买有触摸控制的板子哦</p>
+<blockquote>
 <p>视频驱动板的安装就更简单啦：<br>直接将视频排线接上，然后祈祷不翻车，接通电源开机点亮<br><video src="diy-monitor1.mp4" controls="controls" width="300" height="auto">测试</video></p>
 </blockquote>
-<h4 id="然后把线走好！"><a href="#然后把线走好！" class="headerlink" title="然后把线走好！"></a>然后把线走好！</h4><img src="https://z3.ax1x.com/2021/08/16/f2bFQH.jpg" alt="走线" width="auto" height="300"> 
+<p>然后把线走好！</p>
+<img src="https://z3.ax1x.com/2021/08/16/f2bFQH.jpg" alt="走线" width="auto" height="300"> 
 
-<h4 id="完美"><a href="#完美" class="headerlink" title="完美"></a>完美</h4><h4 id="接下来让我们看看效果："><a href="#接下来让我们看看效果：" class="headerlink" title="接下来让我们看看效果："></a>接下来让我们看看效果：</h4><p><video src="diy-monitor2.mp4" controls="controls" width="300" height="auto">测试</video><br><img src="https://z3.ax1x.com/2021/08/16/f2bVeI.jpg" alt="效果" width="auto" height="300"> </p>
+<p>完美</p>
+<h4 id="三、成品效果"><a href="#三、成品效果" class="headerlink" title="三、成品效果"></a>三、成品效果</h4><p>接下来让我们看看效果：</p>
+<video src="diy-monitor2.mp4" controls="controls" width="300" height="auto">测试</video>
+<img src="https://z3.ax1x.com/2021/08/16/f2bVeI.jpg" alt="效果" width="auto" height="300"> 
+
 <img src="https://z3.ax1x.com/2021/08/16/f2buY8.jpg" alt="效果" width="auto" height="300">
 
-<h4 id="可以监控CPU调度和温度（NICE-）"><a href="#可以监控CPU调度和温度（NICE-）" class="headerlink" title="可以监控CPU调度和温度（NICE!）"></a>可以监控CPU调度和温度（NICE!）</h4>
+<p>可以监控CPU调度和温度（NICE!）</p>
+
     </div>
 
     

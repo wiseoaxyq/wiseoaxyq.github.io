@@ -1,154 +1,285 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_GC.png"/>
-	<link rel="shortcut icon" href="/img/logo_GC.png">
-	
-			    <title>
-    SG's Notes
-    </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/css/mic_main.css" />
-    <link rel="stylesheet" href="/css/dropdownMenu.css" />
-    <meta name="keywords" content="学绅" />
-    
-    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
-    <noscript>
-        <link rel="stylesheet" href="/css/noscript.css" />
-    </noscript>
-    <style type="text/css">
-        body:before {
-          content: ' ';
-          position: fixed;
-          top: 0;
-          background: url('/img/bg.jpg') center 0 no-repeat;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-size: cover; 
-        }
-    </style>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
 
-			    
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wiseoaxyq.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="redis Windows环境下的安装github上有redis的安装包：https:&#x2F;&#x2F;github.com&#x2F;tporadowski&#x2F;redis&#x2F;releases这里主要介绍的是redis.zip的安装。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis的安装">
+<meta property="og:url" content="http://wiseoaxyq.github.io/2022/01/10/redis-install/index.html">
+<meta property="og:site_name" content="SG&#39;s Notes">
+<meta property="og:description" content="redis Windows环境下的安装github上有redis的安装包：https:&#x2F;&#x2F;github.com&#x2F;tporadowski&#x2F;redis&#x2F;releases这里主要介绍的是redis.zip的安装。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7ErYuD.png">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7ErPNn.png">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7ErVjU.png">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7Erihq.png">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7ErA3V.png">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7Erp7j.png">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/10/7EreuF.png">
+<meta property="article:published_time" content="2022-01-10T06:07:36.000Z">
+<meta property="article:modified_time" content="2022-01-12T05:40:40.454Z">
+<meta property="article:author" content="学绅">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2022/01/10/7ErYuD.png">
+
+
+<link rel="canonical" href="http://wiseoaxyq.github.io/2022/01/10/redis-install/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://wiseoaxyq.github.io/2022/01/10/redis-install/","path":"2022/01/10/redis-install/","title":"redis的安装"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>redis的安装 | SG's Notes</title>
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery.scrollex.min.js"></script>
-    <script src="/js/jquery.scrolly.min.js"></script>
-    <script src="/js/skel.min.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
-	
-<meta name="generator" content="Hexo 5.4.0"></head>
-    
-		
-<!-- Layouts -->
 
 
 
-<!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_coy.css" />
-<link rel="stylesheet" href="/css/typo.css" />
-<!-- 文章页 -->
-<body class="is-loading">
-    <!-- Wrapper 外包 s-->
-    <div id="wrapper" class="fade-in">
-        <!-- Intro 头部显示 s -->
-        <!-- Intro 头部显示 e -->
-        <!-- Header 头部logo start -->
-        <header id="header">
-    <a href="/" class="logo">学绅</a>
-</header>
-        <!-- Nav 导航条 start -->
-        <nav id="nav" class="special" >
-            <ul class="menu links" >
-			<!-- Homepage  主页  --> 
-			<li >
-	            <a href="/" rel="nofollow">主页</a>
-	        </li>
-			<!-- categories_name  分类   --> 
-	        
-	        <li class="active">
-	            <a href="#s1">分类</a>
-	                    <ul class="submenu">
-	                        <li>
-	                        <a class="category-link" href="/categories/DIY/">DIY</a></li><li><a class="category-link" href="/categories/note/">note</a>
-	                    </ul>
-	        </li>
-	        
-	        <!-- archives  归档   --> 
-	        
-	        <li class="active">
-	            <a href="#s1">归档</a>
-	                    <ul class="submenu">
-	                        <li>
-	                        <a class="archive-link" href="/archives/2022/01/">一月 2022</a></li><li><a class="archive-link" href="/archives/2021/08/">八月 2021</a></li><li><a class="archive-link" href="/archives/2021/07/">七月 2021</a>
-	                    </ul>
-	        </li>
-	        
-	        
-		        <!-- Pages 自定义   -->
-		        
-		        <li>
-		            <a href="/about/" title="简介">
-		                简介
-		            </a>
-		        </li>
-		        
-		        <li>
-		            <a href="/gallery/" title="图库">
-		                图库
-		            </a>
-		        </li>
-		        
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SG's Notes</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学绅的学习博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
 
 
-            </ul>
-            <!-- icons 图标   -->
-			<ul class="icons">
-                    
-                    <li>
-                        <a title="github" href="https://github.com/wiseoaxyq/wiseoaxyq.github.io" target="_blank" rel="noopener">
-                            <i class="icon fa fa-github"></i>
-                        </a>
-                    </li>
-                    
-			</ul>
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
-        <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://s4.ax1x.com/2022/01/10/7E2SBT.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >redis的安装</h2></a>
-            </div>
-            <!-- Post -->
-            <div class="typo" style="padding: 3rem;">
-                <img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
 
-<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><h4 id="github上有redis的安装包：https-github-com-tporadowski-redis-releases"><a href="#github上有redis的安装包：https-github-com-tporadowski-redis-releases" class="headerlink" title="github上有redis的安装包：https://github.com/tporadowski/redis/releases"></a>github上有redis的安装包：<a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a></h4><h4 id="这里主要介绍的是redis-zip的安装。"><a href="#这里主要介绍的是redis-zip的安装。" class="headerlink" title="这里主要介绍的是redis.zip的安装。"></a>这里主要介绍的是redis.zip的安装。</h4><h5 id="1、首先下载redis-for-windows-zip，redis支持32-64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。"><a href="#1、首先下载redis-for-windows-zip，redis支持32-64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。" class="headerlink" title="1、首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。"></a>1、首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。</h5><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300">
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis-Windows%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">redis Windows环境下的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github%E4%B8%8A%E6%9C%89redis%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%9Ahttps-github-com-tporadowski-redis-releases"><span class="nav-number">1.0.1.</span> <span class="nav-text">github上有redis的安装包：https:&#x2F;&#x2F;github.com&#x2F;tporadowski&#x2F;redis&#x2F;releases</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%99%E9%87%8C%E4%B8%BB%E8%A6%81%E4%BB%8B%E7%BB%8D%E7%9A%84%E6%98%AFredis-zip%E7%9A%84%E5%AE%89%E8%A3%85%E3%80%82"><span class="nav-number">1.0.2.</span> <span class="nav-text">这里主要介绍的是redis.zip的安装。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%E3%80%81%E9%A6%96%E5%85%88%E4%B8%8B%E8%BD%BDredis-for-windows-zip%EF%BC%8Credis%E6%94%AF%E6%8C%8132-64%E4%BD%8D%EF%BC%8C%E4%BD%86github%E4%B8%8A%E4%B8%80%E8%88%AC%E9%83%BD%E6%98%AF64%E4%BD%8D%E7%9A%84%E3%80%82%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8B%E5%90%8E%E5%B0%86%E8%A7%A3%E5%8E%8B%E5%A5%BD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E6%94%BE%E5%88%B0%E4%BD%A0%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8B%E3%80%82"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">1、首先下载redis for windows.zip，redis支持32&#x2F;64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%E3%80%81cmd%E8%BF%9B%E5%85%A5redis%E6%89%80%E5%9C%A8%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E5%A4%B9%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">2、cmd进入redis所在的安装文件夹运行以下代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tips-%E4%B8%8D%E6%83%B3%E6%AF%8F%E6%AC%A1%E9%83%BDcmd%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E8%AF%9D%E5%8F%AF%E4%BB%A5%E5%B0%86redis%E7%9A%84%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E6%B7%BB%E5%8A%A0%E8%87%B3%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%AD%EF%BC%8C%E8%BE%93%E5%85%A5%E4%B9%8B%E5%90%8E%E6%98%BE%E7%A4%BA%E4%BB%A5%E4%B8%8B%E7%95%8C%E9%9D%A2-%F0%9F%91%87"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%99%E6%97%B6%E5%80%99%E5%86%8D%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AAcmd%E7%AA%97%E5%8F%A3%EF%BC%8C%E5%88%87%E6%8D%A2%E5%88%B0%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%BAredis%E8%AE%BE%E7%BD%AE%E9%94%AE%E5%80%BC%E5%AF%B9-%F0%9F%91%87"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">这时候再打开一个cmd窗口，切换到安装目录，为redis设置键值对 👇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%99%E6%97%B6%E5%B0%B1%E5%B7%B2%E7%BB%8F%E5%AE%8C%E6%88%90redis%E7%9A%84%E5%AE%89%E8%A3%85%E4%BA%86%EF%BC%8C%E4%BD%86%E6%98%AF%E6%AF%8F%E6%AC%A1%E5%90%AF%E5%8A%A8redis%E9%83%BD%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5redis-server-exe-redis-windows-conf-%E8%80%8C%E4%B8%94cmd%E7%AA%97%E5%8F%A3%E4%B8%8D%E8%83%BD%E5%85%B3%E9%97%AD%EF%BC%8Cservices-msc%E4%B8%AD%E4%B9%9F%E6%B2%A1%E6%9C%89redis%E7%9A%84%E6%9C%8D%E5%8A%A1%E3%80%82"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">这时就已经完成redis的安装了，但是每次启动redis都需要输入redis-server.exe redis.windows.conf,而且cmd窗口不能关闭，services.msc中也没有redis的服务。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%99%E6%97%B6%E5%B0%B1%E9%9C%80%E8%A6%81%E5%B0%86redis%E6%9C%8D%E5%8A%A1%E6%B7%BB%E5%8A%A0%E8%BF%9Bwindows%E4%B8%AD%E4%BA%86%E3%80%82"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">这时就需要将redis服务添加进windows中了。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3%E3%80%81cmd%E5%88%87%E6%8D%A2%E5%88%B0redis%E7%9A%84%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%EF%BC%8C%E6%B7%BB%E5%8A%A0redis%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%88%91%E8%BF%99%E9%87%8C%E5%B7%B2%E7%BB%8F%E6%B7%BB%E5%8A%A0%E4%BA%86%EF%BC%89-%F0%9F%91%87"><span class="nav-number">1.0.2.7.</span> <span class="nav-text">3、cmd切换到redis的安装目录，执行以下代码，添加redis服务（我这里已经添加了） 👇</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%8B%E5%90%8E%E5%88%B0services-msc%E4%B8%AD%E6%9F%A5%E7%9C%8B%EF%BC%8C%E5%B7%B2%E7%BB%8F%E5%B0%86redis%E6%9C%8D%E5%8A%A1%E6%B7%BB%E5%8A%A0%EF%BC%8C%E4%B9%8B%E5%90%8E%E7%9B%B4%E6%8E%A5%E5%9C%A8%E8%BF%99%E9%87%8C%E5%90%AF%E5%8A%A8redis%E6%9C%8D%E5%8A%A1%E5%8D%B3%E5%8F%AF%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%B9%B6%E4%B8%94%E6%98%AF%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E3%80%82"><span class="nav-number">1.0.2.8.</span> <span class="nav-text">之后到services.msc中查看，已经将redis服务添加，之后直接在这里启动redis服务即可使用，并且是开机自启。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4%E3%80%81%E4%BF%AE%E6%94%B9redis%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">1.0.2.9.</span> <span class="nav-text">4、修改redis的端口号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%93%E5%BC%80redis%E7%9A%84%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%89%93%E5%BC%80redis-windows-conf%E6%96%87%E4%BB%B6%EF%BC%8C%E6%89%BE%E5%88%B0port-%E5%B0%86%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%9B%B4%E6%94%B9%E4%B8%BA%E9%9C%80%E8%A6%81%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7%E3%80%82"><span class="nav-number">1.0.2.10.</span> <span class="nav-text">打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%8B%E5%90%8E%E9%87%8D%E5%90%AFredis%E6%9C%8D%E5%8A%A1%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="nav-number">1.0.2.11.</span> <span class="nav-text">之后重启redis服务即可。</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="学绅"
+      src="https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg">
+  <p class="site-author-name" itemprop="name">学绅</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wiseoaxyq.github.io/2022/01/10/redis-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg">
+      <meta itemprop="name" content="学绅">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SG's Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          redis的安装
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-10 14:07:36" itemprop="dateCreated datePublished" datetime="2022-01-10T14:07:36+08:00">2022-01-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 13:40:40" itemprop="dateModified" datetime="2022-01-12T13:40:40+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
+
+<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><h4 id="github上有redis的安装包：https-github-com-tporadowski-redis-releases"><a href="#github上有redis的安装包：https-github-com-tporadowski-redis-releases" class="headerlink" title="github上有redis的安装包：https://github.com/tporadowski/redis/releases"></a>github上有redis的安装包：<a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a></h4><h4 id="这里主要介绍的是redis-zip的安装。"><a href="#这里主要介绍的是redis-zip的安装。" class="headerlink" title="这里主要介绍的是redis.zip的安装。"></a>这里主要介绍的是redis.zip的安装。</h4><span id="more"></span>
+
+<h5 id="1、首先下载redis-for-windows-zip，redis支持32-64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。"><a href="#1、首先下载redis-for-windows-zip，redis支持32-64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。" class="headerlink" title="1、首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。"></a>1、首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。</h5><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300">
 
 <h5 id="2、cmd进入redis所在的安装文件夹运行以下代码"><a href="#2、cmd进入redis所在的安装文件夹运行以下代码" class="headerlink" title="2、cmd进入redis所在的安装文件夹运行以下代码"></a>2、cmd进入redis所在的安装文件夹运行以下代码</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
 <h5 id="tips-不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面-👇"><a href="#tips-不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面-👇" class="headerlink" title="tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇"></a>tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇</h5><img src="https://s4.ax1x.com/2022/01/10/7ErVjU.png" alt="redis" width="auto" height="300">
@@ -164,26 +295,75 @@
 <h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><h5 id="打开redis的安装目录，打开redis-windows-conf文件，找到port-将端口号更改为需要的端口号。"><a href="#打开redis的安装目录，打开redis-windows-conf文件，找到port-将端口号更改为需要的端口号。" class="headerlink" title="打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。"></a>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。</h5><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300">
 
 <h5 id="之后重启redis服务即可。"><a href="#之后重启redis服务即可。" class="headerlink" title="之后重启redis服务即可。"></a>之后重启redis服务即可。</h5>
-            </div>
-
-            <!-- Post Comments -->
-            
-
-        </div>
-        <!-- Copyright 版权 start -->
-                <div id="copyright">
-            <ul>
-                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
-                <li>Design: <a href="http://wiseoaxyq.github.io " style="border-bottom: none;">学绅</a></li>
-            </ul>
-            
-                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-			
-        </div>
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/note/" rel="tag"># note</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/14/diy-monitor/" rel="prev" title="DIY PC监视器">
+                  <i class="fa fa-chevron-left"></i> DIY PC监视器
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">学绅</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
 </body>
-
-
-
- 	
 </html>

@@ -143,6 +143,58 @@
       </tags>
   </entry>
   <entry>
+    <title>redis的安装</title>
+    <url>/2022/01/10/redis-install/</url>
+    <content><![CDATA[<img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
+
+<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><p>github上有redis的安装包：<a href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a><br>这里主要介绍的是redis.zip的安装。</p>
+<span id="more"></span>
+
+<h5 id="1、下载redis："><a href="#1、下载redis：" class="headerlink" title="1、下载redis："></a>1、下载redis：</h5><p>首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。<br><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300"></p>
+<h5 id="2、执行安装："><a href="#2、执行安装：" class="headerlink" title="2、执行安装："></a>2、执行安装：</h5><p>cmd进入redis所在的安装文件夹运行以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+<p>tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇<br><img src="https://s4.ax1x.com/2022/01/10/7ErVjU.png" alt="redis" width="auto" height="300"></p>
+<p>这时候再打开一个cmd窗口，切换到安装目录，为redis设置键值对 👇</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379   // 6379 为默认端口号，可按照需求设置端口号</span><br><span class="line">set myKey abc                       //设置键值对</span><br><span class="line">get myKey                          // 测试取出键值对</span><br></pre></td></tr></table></figure>
+<img src="https://s4.ax1x.com/2022/01/10/7Erihq.png" alt="redis" width="auto" height="150">
+
+<p>这时就已经完成redis的安装了，但是每次启动redis都需要输入<code>redis-server.exe redis.windows.conf</code>,而且cmd窗口不能关闭，services.msc中也没有redis的服务。<br>这时就需要将redis服务添加进windows中了。</p>
+<h5 id="3、添加redis服务："><a href="#3、添加redis服务：" class="headerlink" title="3、添加redis服务："></a>3、添加redis服务：</h5><p>cmd切换到redis的安装目录，执行以下代码，添加redis服务（我这里已经添加了） 👇</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf</span><br></pre></td></tr></table></figure>
+<img src="https://s4.ax1x.com/2022/01/10/7ErA3V.png" alt="redis" width="auto" height="150">
+
+<p>之后到services.msc中查看，已经将redis服务添加，之后直接在这里启动redis服务即可使用，并且是开机自启。<br><img src="https://s4.ax1x.com/2022/01/10/7Erp7j.png" alt="redis" width="auto" height="200"></p>
+<h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><p>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。<br><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300"></p>
+<p>之后重启redis服务即可。</p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/07/24/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>git的使用</title>
     <url>/2021/08/03/gitusage/</url>
     <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
@@ -187,58 +239,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/07/24/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>redis的安装</title>
-    <url>/2022/01/10/redis-install/</url>
-    <content><![CDATA[<img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
-
-<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><p>github上有redis的安装包：<a href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a><br>这里主要介绍的是redis.zip的安装。</p>
-<span id="more"></span>
-
-<h5 id="1、下载redis："><a href="#1、下载redis：" class="headerlink" title="1、下载redis："></a>1、下载redis：</h5><p>首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。<br><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300"></p>
-<h5 id="2、执行安装："><a href="#2、执行安装：" class="headerlink" title="2、执行安装："></a>2、执行安装：</h5><p>cmd进入redis所在的安装文件夹运行以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
-<p>tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇<br><img src="https://s4.ax1x.com/2022/01/10/7ErVjU.png" alt="redis" width="auto" height="300"></p>
-<p>这时候再打开一个cmd窗口，切换到安装目录，为redis设置键值对 👇</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379   // 6379 为默认端口号，可按照需求设置端口号</span><br><span class="line">set myKey abc                       //设置键值对</span><br><span class="line">get myKey                          // 测试取出键值对</span><br></pre></td></tr></table></figure>
-<img src="https://s4.ax1x.com/2022/01/10/7Erihq.png" alt="redis" width="auto" height="150">
-
-<p>这时就已经完成redis的安装了，但是每次启动redis都需要输入<code>redis-server.exe redis.windows.conf</code>,而且cmd窗口不能关闭，services.msc中也没有redis的服务。<br>这时就需要将redis服务添加进windows中了。</p>
-<h5 id="3、添加redis服务："><a href="#3、添加redis服务：" class="headerlink" title="3、添加redis服务："></a>3、添加redis服务：</h5><p>cmd切换到redis的安装目录，执行以下代码，添加redis服务（我这里已经添加了） 👇</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf</span><br></pre></td></tr></table></figure>
-<img src="https://s4.ax1x.com/2022/01/10/7ErA3V.png" alt="redis" width="auto" height="150">
-
-<p>之后到services.msc中查看，已经将redis服务添加，之后直接在这里启动redis服务即可使用，并且是开机自启。<br><img src="https://s4.ax1x.com/2022/01/10/7Erp7j.png" alt="redis" width="auto" height="200"></p>
-<h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><p>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。<br><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300"></p>
-<p>之后重启redis服务即可。</p>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue基本指令</title>
     <url>/2022/05/05/vue%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<p>Mustache语法：</p>
@@ -246,6 +246,8 @@
 
 <h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><p>“v-once” ：数据只渲染一次，不随着数据变化而变化。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><p>“v-html” ：解析服务器返回的数据，并以链接的形式在dom上展示</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;url&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>

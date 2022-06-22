@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="https://z3.ax1x.com/2021/08/16/f2Hzo6.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://z3.ax1x.com/2021/08/16/f2Hzo6.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://z3.ax1x.com/2021/08/16/f2Hzo6.png">
@@ -187,6 +187,78 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wiseoaxyq.github.io/2022/06/22/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E5%88%9D%E7%BA%A7%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg">
+      <meta itemprop="name" content="学绅">
+      <meta itemprop="description" content="Peace and love">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/22/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E5%88%9D%E7%BA%A7%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">vue组件化的初级使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-22 16:15:14 / 修改时间：16:52:11" itemprop="dateCreated datePublished" datetime="2022-06-22T16:15:14+08:00">2022-06-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="vue的组件化的初级使用"><a href="#vue的组件化的初级使用" class="headerlink" title="vue的组件化的初级使用"></a>vue的组件化的初级使用</h1><h2 id="1-创建组件构造器对象："><a href="#1-创建组件构造器对象：" class="headerlink" title="1.创建组件构造器对象："></a>1.创建组件构造器对象：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cpn = Vue.extend(&#123;</span><br><span class="line">    <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">                &lt;h2&gt;我是标题&lt;/h2&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容1&lt;/p&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容2&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-注册组件"><a href="#2-注册组件" class="headerlink" title="2.注册组件"></a>2.注册组件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.全局组件的注册方法，可以在多个Vue实例下使用</span></span><br><span class="line"><span class="comment">// Vue.component(&#x27;组件的标签名&#x27;,组件名)</span></span><br><span class="line">Vue.component(<span class="string">&#x27;my-cpn&#x27;</span>,cpn)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.局部注册组件，在构建的new Vue中使用components属性注册</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="attr">components</span>:&#123;</span><br><span class="line">        <span class="comment">// 组件的标签名: 组件名</span></span><br><span class="line">        my-cpn2: cpn</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-使用组件"><a href="#3-使用组件" class="headerlink" title="3.使用组件"></a>3.使用组件</h2><p>在el绑定的div中使用组件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn2</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -817,7 +889,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

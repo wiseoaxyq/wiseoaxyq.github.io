@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
+<blockquote>
+<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
+</blockquote>
+<span id="more"></span>
+
+<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
+<p>接下来就可以开始将你的文件放进git仓库了</p>
+<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
+<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
+<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
+<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
+<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
+<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
+<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
+<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DIY PC监视器</title>
     <url>/2021/08/14/diy-monitor/</url>
     <content><![CDATA[<p>这是我第一次动手废物利用。</p>
@@ -41,35 +85,6 @@
       </categories>
       <tags>
         <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git的常用指令</title>
-    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -172,41 +187,26 @@
       </tags>
   </entry>
   <entry>
-    <title>git的使用</title>
-    <url>/2021/08/03/gitusage/</url>
-    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
-<blockquote>
-<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
-</blockquote>
+    <title>git的常用指令</title>
+    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
 
-<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
-<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
-<p>接下来就可以开始将你的文件放进git仓库了</p>
-<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
-<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
-<li><ol>
-<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
-<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
-<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
-<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
-<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
-<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
-<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
-<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
-<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
-<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
-<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
-</ol>
+<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
 ]]></content>
       <categories>
         <category>note</category>
@@ -234,6 +234,23 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>sql server查询对字符串进行截取</title>
+    <url>/2022/08/31/sql-server%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%88%AA%E5%8F%96/</url>
+    <content><![CDATA[<h1 id="substring的用法"><a href="#substring的用法" class="headerlink" title="substring的用法"></a>substring的用法</h1><p> sql server中，使用查询时，提出一个字段中的其中一部分。</p>
+<p> 例如：我们需要将字符串’abc123efg’中的’123’提取出来，则可以用substring来实现：</p>
+<p> <code>select substring(&#39;abc123efg&#39;,4,3)</code></p>
+<p> 结果：’123’</p>
+<h3 id="函数解析：substring-字段-字段第一个字符位置-字段截取长度"><a href="#函数解析：substring-字段-字段第一个字符位置-字段截取长度" class="headerlink" title="函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)"></a>函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)</h3><h1 id="charindex的用法"><a href="#charindex的用法" class="headerlink" title="charindex的用法"></a>charindex的用法</h1><p> 但是，有些时候，需求复杂，字符位置也不是固定的，长度也不固定。此时，我们可以用“charindex”这个函数来解决。</p>
+<p> charindex用于定位某个特定字符在该字符串中的位置。</p>
+<h3 id="函数解析：charindex-‘特定字符’-字段名称"><a href="#函数解析：charindex-‘特定字符’-字段名称" class="headerlink" title="函数解析：charindex( ‘特定字符’, 字段名称 )"></a>函数解析：charindex( ‘特定字符’, 字段名称 )</h3>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>sql server</tag>
+      </tags>
   </entry>
   <entry>
     <title>redis的安装</title>
@@ -265,22 +282,6 @@
       </categories>
       <tags>
         <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue组件化的初级使用</title>
-    <url>/2022/06/22/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E5%88%9D%E7%BA%A7%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="vue的组件化的初级使用"><a href="#vue的组件化的初级使用" class="headerlink" title="vue的组件化的初级使用"></a>vue的组件化的初级使用</h1><h2 id="1-创建组件构造器对象："><a href="#1-创建组件构造器对象：" class="headerlink" title="1.创建组件构造器对象："></a>1.创建组件构造器对象：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpn = Vue.extend(&#123;</span><br><span class="line">    <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">                &lt;h2&gt;我是标题&lt;/h2&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容1&lt;/p&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容2&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-注册组件"><a href="#2-注册组件" class="headerlink" title="2.注册组件"></a>2.注册组件</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.全局组件的注册方法，可以在多个Vue实例下使用</span></span><br><span class="line"><span class="comment">// Vue.component(&#x27;组件的标签名&#x27;,组件名)</span></span><br><span class="line">Vue.component(<span class="string">&#x27;my-cpn&#x27;</span>,cpn)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.局部注册组件，在构建的new Vue中使用components属性注册</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="attr">components</span>:&#123;</span><br><span class="line">        <span class="comment">// 组件的标签名: 组件名</span></span><br><span class="line">        my-cpn2: cpn</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-使用组件"><a href="#3-使用组件" class="headerlink" title="3.使用组件"></a>3.使用组件</h2><p>在el绑定的div中使用组件</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn2</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -331,26 +332,30 @@
       </tags>
   </entry>
   <entry>
-    <title>sql server查询对字符串进行截取</title>
-    <url>/2022/08/31/sql-server%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%88%AA%E5%8F%96/</url>
-    <content><![CDATA[<h1 id="substring的用法"><a href="#substring的用法" class="headerlink" title="substring的用法"></a>substring的用法</h1><p> sql server中，使用查询时，提出一个字段中的其中一部分。</p>
-<p> 例如：我们需要将字符串’abc123efg’中的’123’提取出来，则可以用substring来实现：</p>
-<p> <code>select substring(&#39;abc123efg&#39;,4,3)</code></p>
-<p> 结果：’123’</p>
-<h3 id="函数解析：substring-字段-字段第一个字符位置-字段截取长度"><a href="#函数解析：substring-字段-字段第一个字符位置-字段截取长度" class="headerlink" title="函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)"></a>函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)</h3><h1 id="charindex的用法"><a href="#charindex的用法" class="headerlink" title="charindex的用法"></a>charindex的用法</h1><p> 但是，有些时候，需求复杂，字符位置也不是固定的，长度也不固定。此时，我们可以用“charindex”这个函数来解决。</p>
-<p> charindex用于定位某个特定字符在该字符串中的位置。</p>
-<h3 id="函数解析：charindex-‘特定字符’-字段名称"><a href="#函数解析：charindex-‘特定字符’-字段名称" class="headerlink" title="函数解析：charindex( ‘特定字符’, 字段名称 )"></a>函数解析：charindex( ‘特定字符’, 字段名称 )</h3>]]></content>
+    <title>vue组件化的初级使用</title>
+    <url>/2022/06/22/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E5%88%9D%E7%BA%A7%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="vue的组件化的初级使用"><a href="#vue的组件化的初级使用" class="headerlink" title="vue的组件化的初级使用"></a>vue的组件化的初级使用</h1><h2 id="1-创建组件构造器对象："><a href="#1-创建组件构造器对象：" class="headerlink" title="1.创建组件构造器对象："></a>1.创建组件构造器对象：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpn = Vue.extend(&#123;</span><br><span class="line">    <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">                &lt;h2&gt;我是标题&lt;/h2&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容1&lt;/p&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容2&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-注册组件"><a href="#2-注册组件" class="headerlink" title="2.注册组件"></a>2.注册组件</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.全局组件的注册方法，可以在多个Vue实例下使用</span></span><br><span class="line"><span class="comment">// Vue.component(&#x27;组件的标签名&#x27;,组件名)</span></span><br><span class="line">Vue.component(<span class="string">&#x27;my-cpn&#x27;</span>,cpn)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.局部注册组件，在构建的new Vue中使用components属性注册</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="attr">components</span>:&#123;</span><br><span class="line">        <span class="comment">// 组件的标签名: 组件名</span></span><br><span class="line">        my-cpn2: cpn</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-使用组件"><a href="#3-使用组件" class="headerlink" title="3.使用组件"></a>3.使用组件</h2><p>在el绑定的div中使用组件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn2</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>note</category>
       </categories>
       <tags>
-        <tag>sql server</tag>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
     <title>vue脚手架分析</title>
     <url>/2022/12/20/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%86%E6%9E%90-1/</url>
-    <content><![CDATA[<h1 id="vue脚手架分析"><a href="#vue脚手架分析" class="headerlink" title="vue脚手架分析"></a>vue脚手架分析</h1><h2 id="一-脚手架文件结构"><a href="#一-脚手架文件结构" class="headerlink" title="一. 脚手架文件结构"></a>一. 脚手架文件结构</h2><pre><code>├── node_modules 
+    <content><![CDATA[<h1 id="vue脚手架分析"><a href="#vue脚手架分析" class="headerlink" title="vue脚手架分析"></a>vue脚手架分析</h1><h2 id="一-初始化脚手架"><a href="#一-初始化脚手架" class="headerlink" title="一. 初始化脚手架"></a>一. 初始化脚手架</h2><h3 id="1-全局安装-vue-cli"><a href="#1-全局安装-vue-cli" class="headerlink" title="1. 全局安装@vue/cli"></a>1. 全局安装@vue/cli</h3><p><code>npm install -g @vue/cli</code></p>
+<p>注意，此前若安装过旧版本的vue，请清理干净后，再行安装。</p>
+<p>tips: 可使用此指定检查vue是否安装成功 <code>vue -V</code></p>
+<h3 id="2-切换到要创建项目的目录，使用命令创建项目"><a href="#2-切换到要创建项目的目录，使用命令创建项目" class="headerlink" title="2. 切换到要创建项目的目录，使用命令创建项目"></a>2. 切换到要创建项目的目录，使用命令创建项目</h3><p><code>vue create xxx</code></p>
+<h3 id="3-启动项目"><a href="#3-启动项目" class="headerlink" title="3. 启动项目"></a>3. 启动项目</h3><p><code>npm run serve</code></p>
+<h2 id="二-脚手架文件结构"><a href="#二-脚手架文件结构" class="headerlink" title="二. 脚手架文件结构"></a>二. 脚手架文件结构</h2><pre><code>├── node_modules 
 ├── public
 │   ├── favicon.ico: 页签图标
 │   └── index.html: 主页面
@@ -369,7 +374,7 @@
 </code></pre>
 <span id="more"></span>
 
-<h2 id="二-主要文件结构分析"><a href="#二-主要文件结构分析" class="headerlink" title="二. 主要文件结构分析"></a>二. 主要文件结构分析</h2><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.js是整个项目的入口文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处引入的默认为vue.runtime.xxx.js（运行版的Vue，只包含核心功能，没有模板解析器）</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>  <span class="comment">// 引入vue，</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 引入App组件，它是所有组件的父组件</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭Vue生产提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Vue实例对象--vm</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="comment">// 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，</span></span><br><span class="line">  <span class="comment">// 需要使用render函数接收到的createElement函数去指定具体内容。</span></span><br><span class="line">  <span class="attr">render</span>:<span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="三-主要文件结构分析"><a href="#三-主要文件结构分析" class="headerlink" title="三. 主要文件结构分析"></a>三. 主要文件结构分析</h2><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.js是整个项目的入口文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处引入的默认为vue.runtime.xxx.js（运行版的Vue，只包含核心功能，没有模板解析器）</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>  <span class="comment">// 引入vue，</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 引入App组件，它是所有组件的父组件</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭Vue生产提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Vue实例对象--vm</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="comment">// 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，</span></span><br><span class="line">  <span class="comment">// 需要使用render函数接收到的createElement函数去指定具体内容。</span></span><br><span class="line">  <span class="attr">render</span>:<span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// App.vue，汇总所有组件，其余组件放置于 components文件夹中，结构与此类似</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 模板区域，因为模板只能有一个根，所以要用一个div或其他标签包裹 --&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // Vue、js区域，此处的代码需要暴露，main.js才能使用</span><br><span class="line">  export default&#123;</span><br><span class="line">    name:&#x27;App&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  /* 样式区域 */</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>

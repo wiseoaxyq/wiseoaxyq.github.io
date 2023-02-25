@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>git的使用</title>
-    <url>/2021/08/03/gitusage/</url>
-    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
-<blockquote>
-<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
-</blockquote>
-<span id="more"></span>
-
-<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
-<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
-<p>接下来就可以开始将你的文件放进git仓库了</p>
-<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
-<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
-<li><ol>
-<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
-<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
-<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
-<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
-<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
-<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
-<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
-<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
-<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
-<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
-<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DIY PC监视器</title>
     <url>/2021/08/14/diy-monitor/</url>
     <content><![CDATA[<p>这是我第一次动手废物利用。</p>
@@ -74,6 +30,7 @@
 <p>完美</p>
 <h4 id="三、成品效果"><a href="#三、成品效果" class="headerlink" title="三、成品效果"></a>三、成品效果</h4><p>接下来让我们看看效果：</p>
 <video src="diy-monitor2.mp4" controls="controls" width="300" height="auto">测试</video>
+
 <img src="https://z3.ax1x.com/2021/08/16/f2bVeI.jpg" alt="效果" width="auto" height="300"> 
 
 <img src="https://z3.ax1x.com/2021/08/16/f2buY8.jpg" alt="效果" width="auto" height="300">
@@ -187,11 +144,51 @@
       </tags>
   </entry>
   <entry>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
+<blockquote>
+<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
+</blockquote>
+<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
+<p>接下来就可以开始将你的文件放进git仓库了</p>
+<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
+<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
+<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
+<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
+<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
+<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
+<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
+<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git的常用指令</title>
     <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
 
 <h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -236,30 +233,11 @@
 ]]></content>
   </entry>
   <entry>
-    <title>sql server查询对字符串进行截取</title>
-    <url>/2022/08/31/sql-server%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%88%AA%E5%8F%96/</url>
-    <content><![CDATA[<h1 id="substring的用法"><a href="#substring的用法" class="headerlink" title="substring的用法"></a>substring的用法</h1><p> sql server中，使用查询时，提出一个字段中的其中一部分。</p>
-<p> 例如：我们需要将字符串’abc123efg’中的’123’提取出来，则可以用substring来实现：</p>
-<p> <code>select substring(&#39;abc123efg&#39;,4,3)</code></p>
-<p> 结果：’123’</p>
-<h3 id="函数解析：substring-字段-字段第一个字符位置-字段截取长度"><a href="#函数解析：substring-字段-字段第一个字符位置-字段截取长度" class="headerlink" title="函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)"></a>函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)</h3><h1 id="charindex的用法"><a href="#charindex的用法" class="headerlink" title="charindex的用法"></a>charindex的用法</h1><p> 但是，有些时候，需求复杂，字符位置也不是固定的，长度也不固定。此时，我们可以用“charindex”这个函数来解决。</p>
-<p> charindex用于定位某个特定字符在该字符串中的位置。</p>
-<h3 id="函数解析：charindex-‘特定字符’-字段名称"><a href="#函数解析：charindex-‘特定字符’-字段名称" class="headerlink" title="函数解析：charindex( ‘特定字符’, 字段名称 )"></a>函数解析：charindex( ‘特定字符’, 字段名称 )</h3>]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>sql server</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>redis的安装</title>
     <url>/2022/01/10/redis-install/</url>
     <content><![CDATA[<img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
 
 <h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><p>github上有redis的安装包：<a href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a><br>这里主要介绍的是redis.zip的安装。</p>
-<span id="more"></span>
-
 <h5 id="1、下载redis："><a href="#1、下载redis：" class="headerlink" title="1、下载redis："></a>1、下载redis：</h5><p>首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。<br><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300"></p>
 <h5 id="2、执行安装："><a href="#2、执行安装：" class="headerlink" title="2、执行安装："></a>2、执行安装：</h5><p>cmd进入redis所在的安装文件夹运行以下代码</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
@@ -285,50 +263,20 @@
       </tags>
   </entry>
   <entry>
-    <title>vue基本指令</title>
-    <url>/2022/05/05/vue%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p>Mustache语法：</p>
-<h1 id="vue基础数据-👇"><a href="#vue基础数据-👇" class="headerlink" title="vue基础数据 👇"></a>vue基础数据 👇</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&#x27;&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;&#x27;</span>,</span><br><span class="line">            <span class="attr">num</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">imgUrl</span>: <span class="string">&#x27;https://z3.ax1x.com/2021/08/16/f2Hzo6.png&#x27;</span>,</span><br><span class="line">            <span class="attr">movies</span>:[<span class="string">&#x27;哈利波特&#x27;</span>,<span class="string">&#x27;钢铁侠&#x27;</span>,<span class="string">&#x27;海上钢琴师&#x27;</span>,<span class="string">&#x27;蜘蛛侠&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><p>“v-once” ：数据只渲染一次，不随着数据变化而变化。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><p>“v-html” ：解析服务器返回的数据，并以链接的形式在dom上展示</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;url&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><p>“v-text” ：与效果一致，但无法在后面拼接文本</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span>此处拼接文本无效<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h2><p>“v-pre” ：不解析，直接显示</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-pre</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h2><p>“v-cloak” ：在vue未加载时，隐藏该元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-cloak</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><p>“v-on” ：元素操作控制，v-on:操作=”函数”</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;num&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 常规写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 语法糖写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>“v-for” ：循环</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-for=&quot;自定义名称 in 循环对象名称&quot; --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-for=&quot;(自定义名称, index) in 循环对象名称&quot;，index可以遍历数组下标 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in movies&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>“v-bind” ：绑定元素属性，直接调用服务器返回的数据进行动态展示</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">&quot;imgUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> <span class="comment">&lt;!-- 常规写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;imgUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> <span class="comment">&lt;!-- 语法糖写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>“v-bind”对象语法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- css部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.active</span>&#123;<span class="attribute">color</span>: skyblue;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.error</span>&#123;<span class="attribute">color</span>: red;&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 单独绑定一个类 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;active&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用方法，绑定多个类，并控制开关 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--写法：v-bind:class=&quot;&#123;类名1: bool值, 类名2: bool值&#125;&quot; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;&#123;active: isActive, error: isError&#125;&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 用function方法获取class --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;active&#x27;</span>,</span><br><span class="line">            <span class="attr">isActice</span>: <span class="string">&#x27;true&#x27;</span>,</span><br><span class="line">            <span class="attr">isError</span>: <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="comment">// 此处调用本对象app内的&quot;isActive&quot;和&quot;isError&quot;，需要指向&quot;this&quot;</span></span><br><span class="line">                <span class="keyword">return</span> &#123;<span class="attr">active</span>: <span class="built_in">this</span>.isActive, <span class="attr">error</span>: <span class="built_in">this</span>.isError&#125;;</span><br><span class="line">                <span class="comment">// 返回值 &#123;active: isActive, error: isError&#125;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>v-bind数组语法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用数组作为类名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;[active,error]&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: #app,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;aaa&#x27;</span>,</span><br><span class="line">            <span class="attr">error</span>: <span class="string">&#x27;bbb&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> [<span class="built_in">this</span>.active, <span class="built_in">this</span>.error];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>sql server查询对字符串进行截取</title>
+    <url>/2022/08/31/sql-server%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%88%AA%E5%8F%96/</url>
+    <content><![CDATA[<h1 id="substring的用法"><a href="#substring的用法" class="headerlink" title="substring的用法"></a>substring的用法</h1><p> sql server中，使用查询时，提出一个字段中的其中一部分。</p>
+<p> 例如：我们需要将字符串’abc123efg’中的’123’提取出来，则可以用substring来实现：</p>
+<p> <code>select substring(&#39;abc123efg&#39;,4,3)</code></p>
+<p> 结果：’123’</p>
+<h3 id="函数解析：substring-字段-字段第一个字符位置-字段截取长度"><a href="#函数解析：substring-字段-字段第一个字符位置-字段截取长度" class="headerlink" title="函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)"></a>函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)</h3><h1 id="charindex的用法"><a href="#charindex的用法" class="headerlink" title="charindex的用法"></a>charindex的用法</h1><p> 但是，有些时候，需求复杂，字符位置也不是固定的，长度也不固定。此时，我们可以用“charindex”这个函数来解决。</p>
+<p> charindex用于定位某个特定字符在该字符串中的位置。</p>
+<h3 id="函数解析：charindex-‘特定字符’-字段名称"><a href="#函数解析：charindex-‘特定字符’-字段名称" class="headerlink" title="函数解析：charindex( ‘特定字符’, 字段名称 )"></a>函数解析：charindex( ‘特定字符’, 字段名称 )</h3>]]></content>
       <categories>
         <category>note</category>
       </categories>
       <tags>
-        <tag>Vue</tag>
+        <tag>sql server</tag>
       </tags>
   </entry>
   <entry>
@@ -372,11 +320,54 @@
 ├── README.md: 应用描述文件
 ├── package-lock.json：包版本控制文件
 </code></pre>
-<span id="more"></span>
-
 <h2 id="三-主要文件结构分析"><a href="#三-主要文件结构分析" class="headerlink" title="三. 主要文件结构分析"></a>三. 主要文件结构分析</h2><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.js是整个项目的入口文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处引入的默认为vue.runtime.xxx.js（运行版的Vue，只包含核心功能，没有模板解析器）</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>  <span class="comment">// 引入vue，</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 引入App组件，它是所有组件的父组件</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭Vue生产提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Vue实例对象--vm</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="comment">// 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，</span></span><br><span class="line">  <span class="comment">// 需要使用render函数接收到的createElement函数去指定具体内容。</span></span><br><span class="line">  <span class="attr">render</span>:<span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// App.vue，汇总所有组件，其余组件放置于 components文件夹中，结构与此类似</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 模板区域，因为模板只能有一个根，所以要用一个div或其他标签包裹 --&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // Vue、js区域，此处的代码需要暴露，main.js才能使用</span><br><span class="line">  export default&#123;</span><br><span class="line">    name:&#x27;App&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  /* 样式区域 */</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue基本指令</title>
+    <url>/2022/05/05/vue%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<p>Mustache语法：</p>
+<h1 id="vue基础数据-👇"><a href="#vue基础数据-👇" class="headerlink" title="vue基础数据 👇"></a>vue基础数据 👇</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&#x27;&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;&#x27;</span>,</span><br><span class="line">            <span class="attr">num</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">imgUrl</span>: <span class="string">&#x27;https://z3.ax1x.com/2021/08/16/f2Hzo6.png&#x27;</span>,</span><br><span class="line">            <span class="attr">movies</span>:[<span class="string">&#x27;哈利波特&#x27;</span>,<span class="string">&#x27;钢铁侠&#x27;</span>,<span class="string">&#x27;海上钢琴师&#x27;</span>,<span class="string">&#x27;蜘蛛侠&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><p>“v-once” ：数据只渲染一次，不随着数据变化而变化。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><p>“v-html” ：解析服务器返回的数据，并以链接的形式在dom上展示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;url&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><p>“v-text” ：与效果一致，但无法在后面拼接文本</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span>此处拼接文本无效<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h2><p>“v-pre” ：不解析，直接显示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-pre</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h2><p>“v-cloak” ：在vue未加载时，隐藏该元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-cloak</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><p>“v-on” ：元素操作控制，v-on:操作=”函数”</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;num&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 常规写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 语法糖写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>“v-for” ：循环</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-for=&quot;自定义名称 in 循环对象名称&quot; --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-for=&quot;(自定义名称, index) in 循环对象名称&quot;，index可以遍历数组下标 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in movies&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>“v-bind” ：绑定元素属性，直接调用服务器返回的数据进行动态展示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">&quot;imgUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> <span class="comment">&lt;!-- 常规写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;imgUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> <span class="comment">&lt;!-- 语法糖写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>“v-bind”对象语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- css部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.active</span>&#123;<span class="attribute">color</span>: skyblue;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.error</span>&#123;<span class="attribute">color</span>: red;&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 单独绑定一个类 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;active&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用方法，绑定多个类，并控制开关 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--写法：v-bind:class=&quot;&#123;类名1: bool值, 类名2: bool值&#125;&quot; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;&#123;active: isActive, error: isError&#125;&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 用function方法获取class --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;active&#x27;</span>,</span><br><span class="line">            <span class="attr">isActice</span>: <span class="string">&#x27;true&#x27;</span>,</span><br><span class="line">            <span class="attr">isError</span>: <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="comment">// 此处调用本对象app内的&quot;isActive&quot;和&quot;isError&quot;，需要指向&quot;this&quot;</span></span><br><span class="line">                <span class="keyword">return</span> &#123;<span class="attr">active</span>: <span class="built_in">this</span>.isActive, <span class="attr">error</span>: <span class="built_in">this</span>.isError&#125;;</span><br><span class="line">                <span class="comment">// 返回值 &#123;active: isActive, error: isError&#125;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>v-bind数组语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用数组作为类名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;[active,error]&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: #app,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;aaa&#x27;</span>,</span><br><span class="line">            <span class="attr">error</span>: <span class="string">&#x27;bbb&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> [<span class="built_in">this</span>.active, <span class="built_in">this</span>.error];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>note</category>
       </categories>

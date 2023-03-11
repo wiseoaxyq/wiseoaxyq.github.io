@@ -361,44 +361,6 @@
       </tags>
   </entry>
   <entry>
-    <title>vue脚手架分析</title>
-    <url>/2022/12/20/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%86%E6%9E%90-1/</url>
-    <content><![CDATA[<p>vue脚手架文件结构分析</p>
-<span id="more"></span>
-
-<h1 id="vue脚手架分析"><a href="#vue脚手架分析" class="headerlink" title="vue脚手架分析"></a>vue脚手架分析</h1><h2 id="一-初始化脚手架"><a href="#一-初始化脚手架" class="headerlink" title="一. 初始化脚手架"></a>一. 初始化脚手架</h2><h3 id="1-全局安装-vue-cli"><a href="#1-全局安装-vue-cli" class="headerlink" title="1. 全局安装@vue/cli"></a>1. 全局安装@vue/cli</h3><p><code>npm install -g @vue/cli</code></p>
-<p>注意，此前若安装过旧版本的vue，请清理干净后，再行安装。</p>
-<p>tips: 可使用此指定检查vue是否安装成功 <code>vue -V</code></p>
-<h3 id="2-切换到要创建项目的目录，使用命令创建项目"><a href="#2-切换到要创建项目的目录，使用命令创建项目" class="headerlink" title="2. 切换到要创建项目的目录，使用命令创建项目"></a>2. 切换到要创建项目的目录，使用命令创建项目</h3><p><code>vue create xxx</code></p>
-<h3 id="3-启动项目"><a href="#3-启动项目" class="headerlink" title="3. 启动项目"></a>3. 启动项目</h3><p><code>npm run serve</code></p>
-<h2 id="二-脚手架文件结构"><a href="#二-脚手架文件结构" class="headerlink" title="二. 脚手架文件结构"></a>二. 脚手架文件结构</h2><pre><code>├── node_modules 
-├── public
-│   ├── favicon.ico: 页签图标
-│   └── index.html: 主页面
-├── src
-│   ├── assets: 存放静态资源
-│   │   └── logo.png
-│   │── component: 存放组件
-│   │   └── HelloWorld.vue
-│   │── App.vue: 汇总所有组件
-│   │── main.js: 入口文件
-├── .gitignore: git版本管制忽略的配置
-├── babel.config.js: babel的配置文件
-├── package.json: 应用包配置文件 
-├── README.md: 应用描述文件
-├── package-lock.json：包版本控制文件
-</code></pre>
-<h2 id="三-主要文件结构分析"><a href="#三-主要文件结构分析" class="headerlink" title="三. 主要文件结构分析"></a>三. 主要文件结构分析</h2><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.js是整个项目的入口文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处引入的默认为vue.runtime.xxx.js（运行版的Vue，只包含核心功能，没有模板解析器）</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>  <span class="comment">// 引入vue，</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 引入App组件，它是所有组件的父组件</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭Vue生产提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Vue实例对象--vm</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="comment">// 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，</span></span><br><span class="line">  <span class="comment">// 需要使用render函数接收到的createElement函数去指定具体内容。</span></span><br><span class="line">  <span class="attr">render</span>:<span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// App.vue，汇总所有组件，其余组件放置于 components文件夹中，结构与此类似</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 模板区域，因为模板只能有一个根，所以要用一个div或其他标签包裹 --&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // Vue、js区域，此处的代码需要暴露，main.js才能使用</span><br><span class="line">  export default&#123;</span><br><span class="line">    name:&#x27;App&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  /* 样式区域 */</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue基本指令</title>
     <url>/2022/05/05/vue%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="Mustache语法：-message"><a href="#Mustache语法：-message" class="headerlink" title="Mustache语法：{ { message } }"></a>Mustache语法：{ { message } }</h1><h1 id="vue基础数据-👇"><a href="#vue基础数据-👇" class="headerlink" title="vue基础数据 👇"></a>vue基础数据 👇</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&#x27;&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;&#x27;</span>,</span><br><span class="line">            <span class="attr">num</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">imgUrl</span>: <span class="string">&#x27;https://z3.ax1x.com/2021/08/16/f2Hzo6.png&#x27;</span>,</span><br><span class="line">            <span class="attr">movies</span>:[<span class="string">&#x27;哈利波特&#x27;</span>,<span class="string">&#x27;钢铁侠&#x27;</span>,<span class="string">&#x27;海上钢琴师&#x27;</span>,<span class="string">&#x27;蜘蛛侠&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -435,6 +397,44 @@
 <p>v-bind数组语法：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用数组作为类名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;[active,error]&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: #app,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;aaa&#x27;</span>,</span><br><span class="line">            <span class="attr">error</span>: <span class="string">&#x27;bbb&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> [<span class="built_in">this</span>.active, <span class="built_in">this</span>.error];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue脚手架分析</title>
+    <url>/2022/12/20/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%86%E6%9E%90-1/</url>
+    <content><![CDATA[<p>vue脚手架文件结构分析</p>
+<span id="more"></span>
+
+<h1 id="vue脚手架分析"><a href="#vue脚手架分析" class="headerlink" title="vue脚手架分析"></a>vue脚手架分析</h1><h2 id="一-初始化脚手架"><a href="#一-初始化脚手架" class="headerlink" title="一. 初始化脚手架"></a>一. 初始化脚手架</h2><h3 id="1-全局安装-vue-cli"><a href="#1-全局安装-vue-cli" class="headerlink" title="1. 全局安装@vue/cli"></a>1. 全局安装@vue/cli</h3><p><code>npm install -g @vue/cli</code></p>
+<p>注意，此前若安装过旧版本的vue，请清理干净后，再行安装。</p>
+<p>tips: 可使用此指定检查vue是否安装成功 <code>vue -V</code></p>
+<h3 id="2-切换到要创建项目的目录，使用命令创建项目"><a href="#2-切换到要创建项目的目录，使用命令创建项目" class="headerlink" title="2. 切换到要创建项目的目录，使用命令创建项目"></a>2. 切换到要创建项目的目录，使用命令创建项目</h3><p><code>vue create xxx</code></p>
+<h3 id="3-启动项目"><a href="#3-启动项目" class="headerlink" title="3. 启动项目"></a>3. 启动项目</h3><p><code>npm run serve</code></p>
+<h2 id="二-脚手架文件结构"><a href="#二-脚手架文件结构" class="headerlink" title="二. 脚手架文件结构"></a>二. 脚手架文件结构</h2><pre><code>├── node_modules 
+├── public
+│   ├── favicon.ico: 页签图标
+│   └── index.html: 主页面
+├── src
+│   ├── assets: 存放静态资源
+│   │   └── logo.png
+│   │── component: 存放组件
+│   │   └── HelloWorld.vue
+│   │── App.vue: 汇总所有组件
+│   │── main.js: 入口文件
+├── .gitignore: git版本管制忽略的配置
+├── babel.config.js: babel的配置文件
+├── package.json: 应用包配置文件 
+├── README.md: 应用描述文件
+├── package-lock.json：包版本控制文件
+</code></pre>
+<h2 id="三-主要文件结构分析"><a href="#三-主要文件结构分析" class="headerlink" title="三. 主要文件结构分析"></a>三. 主要文件结构分析</h2><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.js是整个项目的入口文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处引入的默认为vue.runtime.xxx.js（运行版的Vue，只包含核心功能，没有模板解析器）</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>  <span class="comment">// 引入vue，</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 引入App组件，它是所有组件的父组件</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭Vue生产提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Vue实例对象--vm</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="comment">// 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，</span></span><br><span class="line">  <span class="comment">// 需要使用render函数接收到的createElement函数去指定具体内容。</span></span><br><span class="line">  <span class="attr">render</span>:<span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// App.vue，汇总所有组件，其余组件放置于 components文件夹中，结构与此类似</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 模板区域，因为模板只能有一个根，所以要用一个div或其他标签包裹 --&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // Vue、js区域，此处的代码需要暴露，main.js才能使用</span><br><span class="line">  export default&#123;</span><br><span class="line">    name:&#x27;App&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  /* 样式区域 */</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>note</category>
       </categories>

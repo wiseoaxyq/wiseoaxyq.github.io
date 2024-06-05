@@ -44,51 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git的使用</title>
-    <url>/2021/08/03/gitusage/</url>
-    <content><![CDATA[<p>git 初始化本地/远程仓库的说明</p>
-<span id="more"></span>
-
-<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
-<blockquote>
-<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
-</blockquote>
-<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
-<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
-<p>接下来就可以开始将你的文件放进git仓库了</p>
-<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
-<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
-<li><ol>
-<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
-<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
-<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
-<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
-<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
-<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
-<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
-<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
-<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
-<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
-<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
-<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>First&#39;s Note</title>
     <url>/2021/08/02/firstnote/</url>
     <content><![CDATA[<p>这是我的第一篇博客</p>
@@ -190,67 +145,48 @@
       </tags>
   </entry>
   <entry>
-    <title>git的常用指令</title>
-    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p>git 提交/推送/拉取等一些常用的指令</p>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<p>git 初始化本地/远程仓库的说明</p>
 <span id="more"></span>
 
-<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
+<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
+<blockquote>
+<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
+</blockquote>
+<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
+<p>接下来就可以开始将你的文件放进git仓库了</p>
+<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
+<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
+<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
+<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
+<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
+<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
+<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
+<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
 ]]></content>
       <categories>
         <category>note</category>
       </categories>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis的安装</title>
-    <url>/2022/01/10/redis-install/</url>
-    <content><![CDATA[<p>记录redis环境的安装说明（服务器端）</p>
-<p>用于部署无远Enhancer开发的系统（首次部署应用时所需准备的基础环境配置步骤，后续应用部署不需要）</p>
-<span id="more"></span>
-
-<img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
-
-<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><p>github上有redis的安装包：<a href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a><br>这里主要介绍的是redis.zip的安装。</p>
-<h5 id="1、下载redis："><a href="#1、下载redis：" class="headerlink" title="1、下载redis："></a>1、下载redis：</h5><p>首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。<br><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300"></p>
-<h5 id="2、执行安装："><a href="#2、执行安装：" class="headerlink" title="2、执行安装："></a>2、执行安装：</h5><p>cmd进入redis所在的安装文件夹运行以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
-<p>tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇<br><img src="https://s4.ax1x.com/2022/01/10/7ErVjU.png" alt="redis" width="auto" height="300"></p>
-<p>这时候再打开一个cmd窗口，切换到安装目录，为redis设置键值对 👇</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379   // 6379 为默认端口号，可按照需求设置端口号</span><br><span class="line">set myKey abc                       //设置键值对</span><br><span class="line">get myKey                          // 测试取出键值对</span><br></pre></td></tr></table></figure>
-<img src="https://s4.ax1x.com/2022/01/10/7Erihq.png" alt="redis" width="auto" height="150">
-
-<p>这时就已经完成redis的安装了，但是每次启动redis都需要输入<code>redis-server.exe redis.windows.conf</code>,而且cmd窗口不能关闭，services.msc中也没有redis的服务。<br>这时就需要将redis服务添加进windows中了。</p>
-<h5 id="3、添加redis服务："><a href="#3、添加redis服务：" class="headerlink" title="3、添加redis服务："></a>3、添加redis服务：</h5><p>cmd切换到redis的安装目录，执行以下代码，添加redis服务（我这里已经添加了） 👇</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf</span><br></pre></td></tr></table></figure>
-<img src="https://s4.ax1x.com/2022/01/10/7ErA3V.png" alt="redis" width="auto" height="150">
-
-<p>之后到services.msc中查看，已经将redis服务添加，之后直接在这里启动redis服务即可使用，并且是开机自启。<br><img src="https://s4.ax1x.com/2022/01/10/7Erp7j.png" alt="redis" width="auto" height="200"></p>
-<h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><p>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。<br><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300"></p>
-<p>之后重启redis服务即可。</p>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -325,6 +261,70 @@
       <tags>
         <tag>python</tag>
         <tag>serial</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis的安装</title>
+    <url>/2022/01/10/redis-install/</url>
+    <content><![CDATA[<p>记录redis环境的安装说明（服务器端）</p>
+<p>用于部署无远Enhancer开发的系统（首次部署应用时所需准备的基础环境配置步骤，后续应用部署不需要）</p>
+<span id="more"></span>
+
+<img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
+
+<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><p>github上有redis的安装包：<a href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a><br>这里主要介绍的是redis.zip的安装。</p>
+<h5 id="1、下载redis："><a href="#1、下载redis：" class="headerlink" title="1、下载redis："></a>1、下载redis：</h5><p>首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。<br><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300"></p>
+<h5 id="2、执行安装："><a href="#2、执行安装：" class="headerlink" title="2、执行安装："></a>2、执行安装：</h5><p>cmd进入redis所在的安装文件夹运行以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+<p>tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇<br><img src="https://s4.ax1x.com/2022/01/10/7ErVjU.png" alt="redis" width="auto" height="300"></p>
+<p>这时候再打开一个cmd窗口，切换到安装目录，为redis设置键值对 👇</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379   // 6379 为默认端口号，可按照需求设置端口号</span><br><span class="line">set myKey abc                       //设置键值对</span><br><span class="line">get myKey                          // 测试取出键值对</span><br></pre></td></tr></table></figure>
+<img src="https://s4.ax1x.com/2022/01/10/7Erihq.png" alt="redis" width="auto" height="150">
+
+<p>这时就已经完成redis的安装了，但是每次启动redis都需要输入<code>redis-server.exe redis.windows.conf</code>,而且cmd窗口不能关闭，services.msc中也没有redis的服务。<br>这时就需要将redis服务添加进windows中了。</p>
+<h5 id="3、添加redis服务："><a href="#3、添加redis服务：" class="headerlink" title="3、添加redis服务："></a>3、添加redis服务：</h5><p>cmd切换到redis的安装目录，执行以下代码，添加redis服务（我这里已经添加了） 👇</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf</span><br></pre></td></tr></table></figure>
+<img src="https://s4.ax1x.com/2022/01/10/7ErA3V.png" alt="redis" width="auto" height="150">
+
+<p>之后到services.msc中查看，已经将redis服务添加，之后直接在这里启动redis服务即可使用，并且是开机自启。<br><img src="https://s4.ax1x.com/2022/01/10/7Erp7j.png" alt="redis" width="auto" height="200"></p>
+<h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><p>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。<br><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300"></p>
+<p>之后重启redis服务即可。</p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git的常用指令</title>
+    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<p>git 提交/推送/拉取等一些常用的指令</p>
+<span id="more"></span>
+
+<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>

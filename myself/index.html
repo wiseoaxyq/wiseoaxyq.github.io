@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>
       
-        git | SG's Blog
+        我 | SG's Blog
       
     </title>
     <meta name="description" content="Peace and love"/>
@@ -62,42 +62,72 @@
     </div>
     <div class="body">
       
-  <div class="tag-page-title">#git</div>
+  <div class="wall wall-category">
+    <div class="wall-main">
+      <div class="wall-category-title">
+        <div class="title-icon"
+             style="background-image: url(/images/icon/my.png)"></div>
+        我
+      </div>
+      <div class="wall-category-description"></div>
+      <div class="wall-category-tags">
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.min.js"></script>
+        <script type = "text/javascript">
+          window.onload = function() {
+              try {
+                  TagCanvas.Start('tagCanvas', '', {
+                      outlineThickness: 1,
+                      maxSpeed: 0.03,
+                      // freezeActive: true,
+                      // freezeDecel: true,
+                      textColour: null,
+                      textColour: null,
+                      outlineColour: "#aaa",
+                      weight: true,
+                      padding: 4,
+                      // clickToFront: 200,
+                      fadIn: 200,
+                      // pinchZoom: true,
+                      wheelZoom: false,
+                      initial: [0.1, -0.03]
+                  });
+              } catch (e) {
+                  // something went wrong, hide the canvas container
+                  document.getElementById('tags-outer').style.display = 'none';
+              }
+          };
+        </script>
+        <div id="tags-outer">
+          <canvas width="500" height="500" id="tagCanvas">
+            
+              <a href="/tags/myself/" style="font-size: 14px;">myself</a>
+            
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="post-list">
     
-      <div class="post-card">
-        <div class="post__head">
-          <a href="/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="post-title hover-line">git的常用指令</a>
-        </div>
-        <div class="post__body">
-          
-          <div class="post-excerpt"><p>git 提交/推送/拉取等一些常用的指令</p></div>
-        </div>
-        <div class="post__foot">
-          <div class="post-tags">
+      
+        <div class="post-card">
+          <div class="post__head">
+            <a href="/2024/06/05/MySelf/" class="post-title hover-line">我</a>
+          </div>
+          <div class="post__body">
             
-              <a href="/tags/git/" class="post-tag">#git</a>
-            
+            <div class="post-excerpt"></div>
+          </div>
+          <div class="post__foot">
+            <div class="post-tags">
+  
+    <a href="/tags/myself/" class="post-tag">#myself</a>
+  
+
+</div>
           </div>
         </div>
-      </div>
-    
-      <div class="post-card">
-        <div class="post__head">
-          <a href="/2021/08/03/gitusage/" class="post-title hover-line">git的使用</a>
-        </div>
-        <div class="post__body">
-          
-          <div class="post-excerpt"><p>git 初始化本地/远程仓库的说明</p></div>
-        </div>
-        <div class="post__foot">
-          <div class="post-tags">
-            
-              <a href="/tags/git/" class="post-tag">#git</a>
-            
-          </div>
-        </div>
-      </div>
+      
     
     
   </div>

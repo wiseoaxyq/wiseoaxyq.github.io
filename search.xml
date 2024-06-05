@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我</title>
+    <url>/2024/06/05/MySelf/</url>
+    <content><![CDATA[<h1 id="个人简历"><a href="#个人简历" class="headerlink" title="个人简历 - "></a><a href="/files/%E8%90%A7%E6%B0%B8%E9%B8%BF_web%E5%89%8D%E7%AB%AF_%E7%AE%80%E5%8E%86.pdf">个人简历 - </a></h1>]]></content>
+      <categories>
+        <category>myself</category>
+      </categories>
+      <tags>
+        <tag>myself</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DIY PC监视器</title>
     <url>/2021/08/14/diy-monitor/</url>
     <content><![CDATA[<p>这是我第一次动手废物利用。</p>
@@ -190,6 +201,36 @@
       </tags>
   </entry>
   <entry>
+    <title>git的常用指令</title>
+    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<p>git 提交/推送/拉取等一些常用的指令</p>
+<span id="more"></span>
+
+<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>modbus串口通信</title>
     <url>/2023/02/25/modbus%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</url>
     <content><![CDATA[<p>浅浅记录一下，之前做老化柜电压电流，以及电阻测试仪数据采集用到的串口通信</p>
@@ -295,36 +336,6 @@
       </categories>
       <tags>
         <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git的常用指令</title>
-    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p>git 提交/推送/拉取等一些常用的指令</p>
-<span id="more"></span>
-
-<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
-]]></content>
-      <categories>
-        <category>note</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>

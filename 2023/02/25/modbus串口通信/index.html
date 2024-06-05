@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>
+      
+        modbus串口通信 | SG's Blog
+      
+    </title>
+    <meta name="description" content="Peace and love"/>
+    <meta name="keywords" content=""/>
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"/>
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color=""/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+    
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css"/>
+  
+
+  <meta name="generator" content="Hexo 5.4.2"></head>
+  <body>
+    <div class="head">
+      <div class="nav">
+        <a href="/" class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg" />
+        </a>
+        <input id="navBtn" type="checkbox"/>
+        <div class="nav-menu">
+          
+            
+              <a class="nav-menu-item" href="/note">开发者</a>
+            
+              <a class="nav-menu-item" href="/DIY">兴趣使然</a>
+            
+          
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner">
+      <div class="post-content__head">
+        <div class="post-title">modbus串口通信</div>
+        <div class="post-info">
+          
+  
+    <a href="/tags/python/" class="post-tag">#python</a>
+  
+    <a href="/tags/serial/" class="post-tag">#serial</a>
+  
+
+
+          <span class="post-date">2023-02-25</span>
+        </div>
+      </div>
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <p>浅浅记录一下，之前做老化柜电压电流，以及电阻测试仪数据采集用到的串口通信</p>
+<p>使用python serial模块进行的串口通信。</p>
+<span id="more"></span>
+
+<h3 id="serial模块的使用方法"><a href="#serial模块的使用方法" class="headerlink" title="serial模块的使用方法"></a>serial模块的使用方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入serial模块</span></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口，GNU / Linux上的/ dev / ttyUSB0 等 或 Windows上的 COM3 等</span></span><br><span class="line"><span class="comment"># 波特率，标准值之一：50,75,110,134,150,200,300,600,1200,1800,2400,4800,9600,19200,38400,57600,115200</span></span><br><span class="line"><span class="comment"># 超时设置,None：永远等待操作，0为立即返回请求结果，其他值为等待超时时间(单位为秒）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openPort</span>(<span class="params">portx, bps, timeout</span>):</span></span><br><span class="line">  ret = <span class="literal">False</span></span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 打开串口，并得到串口对象</span></span><br><span class="line">    ser = serial.Serial(portx, bps, timeout = timeout)</span><br><span class="line">    <span class="comment"># 判断串口是否打开</span></span><br><span class="line">    <span class="keyword">if</span>(ser.is_open):</span><br><span class="line">      ret = <span class="literal">True</span></span><br><span class="line">  <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="comment"># 如果异常则输出异常原因</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---Error---&quot;</span>, e)</span><br><span class="line">  <span class="keyword">return</span> ser, ret</span><br></pre></td></tr></table></figure>
+
+<h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入serial模块</span></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  ser = serial.Serial(<span class="string">&#x27;COM1&#x27;</span>, <span class="number">9600</span>, <span class="literal">None</span>)</span><br><span class="line">  <span class="keyword">if</span>(ser.is_open):</span><br><span class="line">    aa = <span class="string">&#x27;46 45 54 43 68 3F 0A&#x27;</span>  <span class="comment"># 这里使用十六进制数，数据的类型根据对应的协议进行更改</span></span><br><span class="line">    bb = <span class="built_in">bytes</span>.fromhex(aa)  <span class="comment"># 数据转换为bytes类型</span></span><br><span class="line">    result = ser.write(bb)  <span class="comment"># 发送数据</span></span><br><span class="line">    <span class="built_in">print</span> result  <span class="comment"># 查看发送数据</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入serial模块</span></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  ser = serial.Serial(<span class="string">&#x27;COM1&#x27;</span>, <span class="number">9600</span>, <span class="literal">None</span>)</span><br><span class="line">  <span class="keyword">if</span>(ser.is_open):</span><br><span class="line">    count = ser.in_waiting  <span class="comment"># 返回数据的字节数</span></span><br><span class="line">    data = ser.read(count)  <span class="comment"># 使用read接收数据</span></span><br><span class="line">    <span class="built_in">print</span> data  <span class="comment"># 输出接收的数据</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="serial模块常用的方法"><a href="#serial模块常用的方法" class="headerlink" title="serial模块常用的方法"></a>serial模块常用的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ser.open()</td>
+<td align="left">打开端口</td>
+</tr>
+<tr>
+<td align="left">ser.close()</td>
+<td align="left">关闭端口</td>
+</tr>
+<tr>
+<td align="left">ser.is_open</td>
+<td align="left">查看端口是否打开</td>
+</tr>
+<tr>
+<td align="left">ser.write()</td>
+<td align="left">发送数据</td>
+</tr>
+<tr>
+<td align="left">ser.read()</td>
+<td align="left">接收数据，可指定字节数，默认为1</td>
+</tr>
+<tr>
+<td align="left">ser.readline()</td>
+<td align="left">接收一行数据</td>
+</tr>
+<tr>
+<td align="left">ser.read_all</td>
+<td align="left">接收全部数据</td>
+</tr>
+<tr>
+<td align="left">ser.in_waitting</td>
+<td align="left">返回数据的字节数</td>
+</tr>
+<tr>
+<td align="left">ser.flush()</td>
+<td align="left">等待所有数据发出</td>
+</tr>
+<tr>
+<td align="left">ser.flushInput</td>
+<td align="left">丢弃接收缓存中的所有数据</td>
+</tr>
+<tr>
+<td align="left">ser.flushOutput()</td>
+<td align="left">终止当前发送操作，并丢弃发送缓存中的数据</td>
+</tr>
+</tbody></table>
+
+      </div>
+    </div>
+  </article>
+  <div class="post__foot">
+    
+    <div class="post-nav">
+  
+    <a class="post-nav-item-left" href="/2023/03/10/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%85%E6%B8%B8%E5%9C%B0%E5%9B%BE%E9%94%9A%E7%82%B9/">
+      <div class="text-align">
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596"/>
+        </svg>
+        <span class="text-small">上一篇</span>
+      </div>
+      <div>自定义旅游地图锚点</div>
+    </a>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="/2022/12/20/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%86%E6%9E%90-1/">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596"/>
+        </svg>
+      </div>
+      vue脚手架分析
+    </a>
+  
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              <div class="matts">愿</div><div class="matts">时</div><div class="matts">光</div><div class="matts">永</div><div class="matts">驻</div>
+            </div>
+          
+            <div class="foot-line">
+              <div class="matts">愿</div><div class="matts">星</div><div class="matts">辰</div><div class="matts">永</div><div class="matts">熠</div>
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-github.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/wiseoaxyq/">github</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-wx.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/pgEVjoSVOyBi2xhCUna6HQ">友链-微信公众号</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link"
+                     height="20px"
+                     width="20px"
+                     src="/images/icon/icon-email.svg"/>
+                <a class="foot-link" href="mailto:wiseoaxyq@163.com">wiseoaxyq@163.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="http://wiseoaxyq.github.io">SG's Blog</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)"
+            d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z" />
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)"
+            d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z" />
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+            d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z" />
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+    
+  
+
+  </body>
+</html>

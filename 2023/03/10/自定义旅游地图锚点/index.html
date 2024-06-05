@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>
+      
+        自定义旅游地图锚点 | SG's Blog
+      
+    </title>
+    <meta name="description" content="Peace and love"/>
+    <meta name="keywords" content=""/>
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"/>
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color=""/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+    
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css"/>
+  
+
+  <meta name="generator" content="Hexo 5.4.2"></head>
+  <body>
+    <div class="head">
+      <div class="nav">
+        <a href="/" class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg" />
+        </a>
+        <input id="navBtn" type="checkbox"/>
+        <div class="nav-menu">
+          
+            
+              <a class="nav-menu-item" href="/note">开发者</a>
+            
+              <a class="nav-menu-item" href="/DIY">兴趣使然</a>
+            
+          
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner">
+      <div class="post-content__head">
+        <div class="post-title">自定义旅游地图锚点</div>
+        <div class="post-info">
+          
+  
+    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-tag">#微信小程序</a>
+  
+
+
+          <span class="post-date">2023-03-10</span>
+        </div>
+      </div>
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <p>使用透明view，实现旅游地图上的锚点链接</p>
+<span id="more"></span>
+
+<p>最近在做“游阅石龙”小程序的时候，做到了旅游地图，我希望能在地图上点击特定地点，跳转或弹窗，介绍这个地点的介绍。就浅浅记录一下功能实现的方法吧。</p>
+<p>首先，放置地图图片需要一个容器 <code> &lt;movable-view&gt;</code>，这是一个可缩放、移动的视图容器，而这个容器需要另外一个容器，限制它的移动区域，那就是<code>&lt;movable-area&gt;</code>了</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- imdex.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mapBox&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- direction：movable-view的移动方向</span></span><br><span class="line"><span class="comment">    scale：是否支持双指缩放</span></span><br><span class="line"><span class="comment">    scale-min max value：缩放最小值 缩放最大值 缩放默认 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">direction</span>=<span class="string">&quot;all&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;true&quot;</span> <span class="attr">scale-min</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">scale-max</span>=<span class="string">&quot;7&quot;</span> <span class="attr">scale-value</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">imgae</span> <span class="attr">src</span>=<span class="string">&quot;/pic/pic.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h4><blockquote>
+<p>movable-area必须设置width和height属性，不设置默认为10*10px</p>
+</blockquote>
+<blockquote>
+<p>其余设定可以直接参考微信开放文档</p>
+</blockquote>
+<p>这样基本框架就搭好了，地图图片可以在区域内随意滑动、缩放。</p>
+<!-- # 这里放张效果图 -->
+<p><video src="1.mp4" controls="controls" width="300" height="auto"></video></p>
+<p>接下来就是做图片上的锚点链接了</p>
+<p>做这个锚点链接其实很多方法，我这里也是参考了社区大佬的方式，取巧实现的。那就是使用一个透明的<code>&lt;view&gt;</code>，定位到地图上的点位，实现可点击锚点。</p>
+<h3 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- imdex.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mapBox&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">direction</span>=<span class="string">&quot;all&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;true&quot;</span> <span class="attr">scale-min</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">scale-max</span>=<span class="string">&quot;7&quot;</span> <span class="attr">scale-value</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">imgae</span> <span class="attr">src</span>=<span class="string">&quot;/pic/pic.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 浮动锚点，这里偷懒用的微信开发者工具里的可视化，所以样式直接附在元素内了 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;bindtapIcon&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;left: 500rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        top: 880rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        position: fixed; </span></span></span><br><span class="line"><span class="string"><span class="tag">        width: 100rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        height: 190rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        display: block; </span></span></span><br><span class="line"><span class="string"><span class="tag">        box-sizing: border-box&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* index.wxss */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* mapBox部分 注意所有尺寸使用 rpx 自适应*/</span></span><br><span class="line"><span class="selector-class">.mapBox</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">630</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">860</span>rpx;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">4em</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">border</span>: .<span class="number">8px</span> dashed <span class="built_in">rgb</span>(<span class="number">75</span>, <span class="number">146</span>, <span class="number">99</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="comment">/* 隐藏图片溢出区域 */</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movable-area&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">860</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movable-view&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1252</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1712</span>rpx;</span><br><span class="line">  <span class="comment">/* 观察区域大小 */</span></span><br><span class="line">  <span class="comment">/* border: 1px solid red; */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mapBox</span> image&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1712</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1252</span>rpx;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">25%</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>);</span><br><span class="line">  <span class="comment">/* 观察图片区域 */</span></span><br><span class="line">  <span class="comment">/* border: 1px solid red; */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 锚点 */</span></span><br><span class="line"><span class="selector-class">.bindtapIcon</span>&#123;</span><br><span class="line">  <span class="comment">/* 使用fixed定位锚点 */</span></span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="comment">/* 给定初始大小 */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="comment">/* 用于观察锚点位置，取消后锚点透明 */</span></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">85</span>, <span class="number">216</span>, <span class="number">73</span>, <span class="number">0.8</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到这里，锚点的设置基本就做好了，可以直接用微信开发者工具的可视化定位锚点。注意：所有定位的单位需要使用<code>“rpx”</code>等自适应的属性，否则不同机型大小会影响锚点的定位。</p>
+<!-- # 这里放张效果图 -->
+<p><video src="2.mp4" controls="controls" width="300" height="auto"></video></p>
+<p>接下来就是页面跳转了</p>
+<h3 id="做法：-1"><a href="#做法：-1" class="headerlink" title="做法："></a>做法：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- imdex.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mapBox&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">direction</span>=<span class="string">&quot;all&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;true&quot;</span> <span class="attr">scale-min</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">scale-max</span>=<span class="string">&quot;7&quot;</span> <span class="attr">scale-value</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">imgae</span> <span class="attr">src</span>=<span class="string">&quot;/pic/pic.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 浮动锚点，这里偷懒用的微信开发者工具里的可视化，所以样式直接附在元素内了 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;bindtapIcon&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;left: 500rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        top: 880rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        position: fixed; </span></span></span><br><span class="line"><span class="string"><span class="tag">        width: 100rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        height: 190rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        display: block; </span></span></span><br><span class="line"><span class="string"><span class="tag">        box-sizing: border-box&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">bindtap</span>=<span class="string">&quot;mapSwitchTab&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">data-id</span>=<span class="string">&quot;&#123;&#123;locationInfo[0].id&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 指定方法，data-id传值 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="comment">// 定义锚点数据</span></span><br><span class="line">    <span class="attr">locationInfo</span>:[</span><br><span class="line">      &#123;<span class="attr">id</span>:<span class="string">&quot;001&quot;</span>, <span class="attr">title</span>:<span class="string">&quot;杠空间&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 地图锚点跳转介绍页面</span></span><br><span class="line">  <span class="attr">mapSwitchTab</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 查看id</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.currentTarget.dataset.id)</span><br><span class="line">    <span class="built_in">this</span>.setData(&#123;<span class="attr">value</span>:e.currentTarget.dataset.id&#125;)</span><br><span class="line">    wx.navigateTo(&#123;</span><br><span class="line">      <span class="comment">// 跳转地址，传参</span></span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;/pages/location/location?value=&#x27;</span>+<span class="built_in">this</span>.data.value,</span><br><span class="line">      <span class="function"><span class="title">success</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;跳转成功&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// location.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="attr">locationInfo</span>:[</span><br><span class="line">      &#123;<span class="attr">id</span>:<span class="string">&#x27;001&#x27;</span>, <span class="attr">title</span>:<span class="string">&quot;杠空间&quot;</span>, <span class="attr">introduction</span>:<span class="string">&quot;这是一段简介&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 加载时接收参数，展示相对应的数据</span></span><br><span class="line">  <span class="function"><span class="title">onLoad</span>(<span class="params">options</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; <span class="built_in">this</span>.data.locationInfo.length; index++) &#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">this</span>.data.locationInfo[index].id === options.value)&#123;</span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;<span class="attr">value</span>:options.value&#125;) </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><video src="3.mp4" controls="controls" width="300" height="auto"></video></p>
+<p>到这里基本就做完啦，当然数据最好还是上数据库，不过开发前期，测试使用静态数据也足够了，嘻嘻。</p>
+
+      </div>
+    </div>
+  </article>
+  <div class="post__foot">
+    
+    <div class="post-nav">
+  
+    <div class="post-nav-item-left"></div>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="/2023/02/25/modbus%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596"/>
+        </svg>
+      </div>
+      modbus串口通信
+    </a>
+  
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              <div class="matts">愿</div><div class="matts">时</div><div class="matts">光</div><div class="matts">永</div><div class="matts">驻</div>
+            </div>
+          
+            <div class="foot-line">
+              <div class="matts">愿</div><div class="matts">星</div><div class="matts">辰</div><div class="matts">永</div><div class="matts">熠</div>
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-github.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/wiseoaxyq/">github</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-wx.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/pgEVjoSVOyBi2xhCUna6HQ">友链-微信公众号</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link"
+                     height="20px"
+                     width="20px"
+                     src="/images/icon/icon-email.svg"/>
+                <a class="foot-link" href="mailto:wiseoaxyq@163.com">wiseoaxyq@163.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="http://wiseoaxyq.github.io">SG's Blog</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)"
+            d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z" />
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)"
+            d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z" />
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+            d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z" />
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+    
+  
+
+  </body>
+</html>

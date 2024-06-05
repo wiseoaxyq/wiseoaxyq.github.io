@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>DIY PC监视器</title>
+    <url>/2021/08/14/diy-monitor/</url>
+    <content><![CDATA[<p>这是我第一次动手废物利用。</p>
+<p>在一次整理中，偶然的发现了一台烂了的平板电脑，拆开一看，主板基本不能使用了，触摸屏也失灵了。本想着当垃圾扔了，又想了想，我那台服役了几年的战神Z7M，打游戏时，发热负载有点高，想着能不能废物利用，将平板的屏幕改成一个可以查看CPU负载和温度的监控器。</p>
+<span id="more"></span>
+
+<h4 id="一、需要准备的东西："><a href="#一、需要准备的东西：" class="headerlink" title="一、需要准备的东西："></a>一、需要准备的东西：</h4><ol>
+<li>烂了，但不完全烂的平板电脑一台 <del>（至少屏幕是好的）</del></li>
+<li>显示驱动板一块</li>
+</ol>
+<h4 id="二、拆机："><a href="#二、拆机：" class="headerlink" title="二、拆机："></a>二、拆机：</h4><p>首先，先将平板电脑的屏幕拆下：</p>
+<blockquote>
+<p> 1、先将后盖、侧边的螺丝拧下来<br><img src="https://z3.ax1x.com/2021/08/16/f2biSe.jpg" alt="后盖" width="auto" height="300"><br>2、 将后盖撬开<br>3、 主板上的螺丝拧下（因为其它部件基本都烂了，用不上，所以我就不还原了，随便拆了）<br><img src="https://z3.ax1x.com/2021/08/16/f2beTP.png" alt="后盖" width="auto" height="300"><br>4、 拆下电池、主板、松开液晶屏与触摸屏的排线<br><img src="https://z3.ax1x.com/2021/08/16/f2bKfS.png" alt="后盖" width="auto" height="300"><br>5、 清理液晶屏后盖<br>6、 拆完之后装回去就是这样啦！(探索版YYDS)<br><img src="https://z3.ax1x.com/2021/08/16/f2b9JO.jpg" alt="探索版" width="auto" height="300">   </p>
+</blockquote>
+<img src="https://z3.ax1x.com/2021/08/16/f2bCWD.jpg" alt="屏幕" width="auto" height="300">
+ 
+<p>这样一块完美的7寸液晶屏幕就诞生啦！<br>然后，就等我的显示驱动板送货了…花了我50大洋…</p>
+<p>我买的显示驱动板是50针的单视频驱动，hdmi输出，卖家还送了控制板和遥控器（不知道自己屏幕排线是多少针的可以问问卖家哦~）<br><img src="https://z3.ax1x.com/2021/08/16/f2bkyd.jpg" alt="驱动板" width="auto" height="300"> </p>
+<p>触摸屏没坏的小伙伴可以买有触摸控制的板子哦</p>
+<blockquote>
+<p>视频驱动板的安装就更简单啦：<br>直接将视频排线接上，然后祈祷不翻车，接通电源开机点亮<br><video src="diy-monitor1.mp4" controls="controls" width="300" height="auto">测试</video></p>
+</blockquote>
+<p>然后把线走好！</p>
+<img src="https://z3.ax1x.com/2021/08/16/f2bFQH.jpg" alt="走线" width="auto" height="300"> 
+
+<p>完美</p>
+<h4 id="三、成品效果"><a href="#三、成品效果" class="headerlink" title="三、成品效果"></a>三、成品效果</h4><p>接下来让我们看看效果：</p>
+<video src="diy-monitor2.mp4" controls="controls" width="300" height="auto">测试</video>
+
+<img src="https://z3.ax1x.com/2021/08/16/f2bVeI.jpg" alt="效果" width="auto" height="300"> 
+
+<img src="https://z3.ax1x.com/2021/08/16/f2buY8.jpg" alt="效果" width="auto" height="300">
+
+<p>可以监控CPU调度和温度（NICE!）</p>
+]]></content>
+      <categories>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git的使用</title>
+    <url>/2021/08/03/gitusage/</url>
+    <content><![CDATA[<p>git 初始化本地/远程仓库的说明</p>
+<span id="more"></span>
+
+<h2 id="一、本地仓库"><a href="#一、本地仓库" class="headerlink" title="一、本地仓库"></a>一、本地仓库</h2><p>首先，把你想要创建版本库的文件夹打开，可以是有项目的文件夹，也可以是空文件夹。（windows用户请注意避免中文路径哦！）<br>右键选择 “git bash here”  <del>前提是你已经装了git（不是）</del></p>
+<blockquote>
+<p>输入：<br><code>$ git init</code><br>这时候你的文件夹里会出现 .git 这样一个文件夹 <em>（是隐藏的）</em><br>这时候你的本地版本库就算已经建好啦！</p>
+</blockquote>
+<p>现在，我们先编写一个 readme.txt 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Git is a version control system.</span><br><span class="line">Git is free software</span><br></pre></td></tr></table></figure>
+<p>放到你git版本库的目录下 <em>（子目录也可以哦）</em></p>
+<p>接下来就可以开始将你的文件放进git仓库了</p>
+<h4 id="1-告诉git把文件添加到仓库："><a href="#1-告诉git把文件添加到仓库：" class="headerlink" title="1.告诉git把文件添加到仓库："></a>1.告诉git把文件添加到仓库：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add 文件名</span><br><span class="line">$ git add . //所有文件</span><br></pre></td></tr></table></figure>
+<h4 id="2-告诉git把文件提交到仓库："><a href="#2-告诉git把文件提交到仓库：" class="headerlink" title="2.告诉git把文件提交到仓库："></a>2.告诉git把文件提交到仓库：</h4><p><code>$ git commit -m &#39;本次提交的说明&#39;</code><br>说明记录会保存到 readme.txt 文件中</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>初始化一个Git仓库使用 <code>git init</code> 命令</li>
+<li><ol>
+<li>添加文件到仓库使用 <code>git add &lt;file&gt;</code> （可重复添加）</li>
+<li>使用命令 <code>git commit -m &lt;message&gt;</code>，完成提交</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、远程仓库"><a href="#二、远程仓库" class="headerlink" title="二、远程仓库"></a>二、远程仓库</h2><p>我一般习惯将代码托管到 GitHub 上，那么 git 的远程仓库就很管用啦。</p>
+<p>首先，我们登录 GitHub ，创建一个新的 repository 仓库，这样我们就拥有了一个远程仓库啦！</p>
+<p>接着，回到要上传到远程仓库的本地仓库，右键 git bash here，输入以下命令：<br><code>$ git remote add origin &lt;ssh&gt;</code></p>
+<p>添加后，远程库的名字就是 origin，这是Git的默认叫法，也可以改成其它的。</p>
+<p>下一步就可以将本地库的所有内容推送到远程库上了：<br><code>$ git push origin master //master是分支名称</code>  </p>
+<p>推送成功后，可以立刻查看 GitHub 上的内容，已经跟本地的一模一样了</p>
+<h4 id="删除远程库："><a href="#删除远程库：" class="headerlink" title="删除远程库："></a>删除远程库：</h4><p>有时候 ssh 不小心输错了，可以通过<code>$ git remote rm origin</code>来删除远程库，删除远程库并不会影响远程库，只是解除了本地与远程的绑定关系</p>
+<p>在删除链接前，可以先用<code>$ git remote -v</code>查看远程库信息</p>
+<h4 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h4><ol>
+<li>要关联一个远程库，使用命令：<code>git remote add origin &lt;ssh&gt;</code>；</li>
+<li>关联后，使用命令：<code>git push -u origin master</code> 第一次推送master分支的所有内容；</li>
+<li>此后，每次本地提交后，只要有必要，就可以使用<code>git push origin master</code>推送最新修改。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>First&#39;s Note</title>
+    <url>/2021/08/02/firstnote/</url>
+    <content><![CDATA[<p>这是我的第一篇博客</p>
+<p>就记录下Markdown的一些基础语法吧。</p>
+<span id="more"></span>
+
+<h3 id="1、标题"><a href="#1、标题" class="headerlink" title="1、标题"></a>1、标题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
+<h3 id="2、段落格式"><a href="#2、段落格式" class="headerlink" title="2、段落格式"></a>2、段落格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">换行（末尾添加两个空格）</span><br><span class="line">回车  </span><br><span class="line">或者  </span><br><span class="line">换行（中间空一行）</span><br><span class="line">回车</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3、字体"><a href="#3、字体" class="headerlink" title="3、字体"></a>3、字体</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">_斜体_</span><br><span class="line">**粗体**</span><br><span class="line">__粗体__</span><br><span class="line">***粗斜体***</span><br><span class="line">___粗斜体___</span><br></pre></td></tr></table></figure>
+<h4 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h4><p><em>斜体</em><br><em>斜体</em><br><strong>粗体</strong><br><strong>粗体</strong><br><em><strong>粗斜体</strong></em><br><em><strong>粗斜体</strong></em></p>
+<hr>
+<h3 id="4、各种线"><a href="#4、各种线" class="headerlink" title="4、各种线"></a>4、各种线</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***或---或___   (分割线)</span><br><span class="line">~~删除线~~</span><br><span class="line">&lt;u&gt;下划线&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="例：-2"><a href="#例：-2" class="headerlink" title="例："></a>例：</h4><hr>
+<hr>
+<hr>
+<p><del>删除线</del><br><u>下划线</u></p>
+<hr>
+<h3 id="5、列表"><a href="#5、列表" class="headerlink" title="5、列表"></a>5、列表</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 无序列表</span><br><span class="line">+ 无序列表</span><br><span class="line">- 无序列表</span><br><span class="line">（*,+,-后面有一个空格）</span><br><span class="line"></span><br><span class="line">1. 有序列表</span><br><span class="line">2. 有序列表</span><br><span class="line">3. 有序列表</span><br><span class="line"></span><br><span class="line">1. 第一项</span><br><span class="line">    - 第一项镶嵌的第一个元素</span><br><span class="line">	- 第一项镶嵌的第二个元素</span><br><span class="line">2. 第二项</span><br><span class="line">    - 第二项镶嵌的第一个元素</span><br><span class="line">	- 第二项镶嵌的第二个元素</span><br><span class="line">（列表镶嵌再子列表前加四个空格即可）</span><br></pre></td></tr></table></figure>
+<h4 id="例：-3"><a href="#例：-3" class="headerlink" title="例："></a>例：</h4><ul>
+<li>无序列表</li>
+</ul>
+<ul>
+<li>无序列表</li>
+</ul>
+<ul>
+<li>无序列表</li>
+</ul>
+<ol>
+<li><p>有序列表</p>
+</li>
+<li><p>有序列表</p>
+</li>
+<li><p>有序列表</p>
+</li>
+<li><p>第一项</p>
+<ul>
+<li>第一项镶嵌的第一个元素</li>
+<li>第一项镶嵌的第二个元素</li>
+</ul>
+</li>
+<li><p>第二项</p>
+<ul>
+<li>第二项镶嵌的第一个元素</li>
+<li>第二项镶嵌的第二个元素 </li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="6、区块引用"><a href="#6、区块引用" class="headerlink" title="6、区块引用"></a>6、区块引用</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt;&gt; 第二层嵌套</span><br><span class="line">&gt;&gt;&gt; 第三层嵌套</span><br></pre></td></tr></table></figure>
+<h4 id="例：-4"><a href="#例：-4" class="headerlink" title="例："></a>例：</h4><blockquote>
+<p>区块引用</p>
+<blockquote>
+<p>第二层嵌套</p>
+<blockquote>
+<p>第三层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="7、链接"><a href="#7、链接" class="headerlink" title="7、链接"></a>7、链接</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[链接名称](链接地址)</span><br><span class="line">或者</span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="例：-5"><a href="#例：-5" class="headerlink" title="例："></a>例：</h4><p>这是一个链接<a href="https://www.baidu.com/">百度</a><br>或者<a href="https://www.baidu.com/">https://www.baidu.com</a></p>
+<hr>
+<h3 id="8、图片"><a href="#8、图片" class="headerlink" title="8、图片"></a>8、图片</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![alt 属性文本](图片地址 &quot;可选标题&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="例：-6"><a href="#例：-6" class="headerlink" title="例："></a>例：</h4><p><img src="https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg" alt="me" title="me"></p>
+<!-- [![f2Hxdx.jpg](https://z3.ax1x.com/2021/08/16/f2Hxdx.jpg)](https://imgtu.com/i/f2Hxdx) -->
+
+<hr>
+<h3 id="9、表格"><a href="#9、表格" class="headerlink" title="9、表格"></a>9、表格</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头 | 表头 |</span><br><span class="line">| --- | --- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line"></span><br><span class="line">-:   内容和标题烂右对齐</span><br><span class="line">:-   内容和标题栏左对齐</span><br><span class="line">:-:  内容和标题栏居中对齐</span><br></pre></td></tr></table></figure>
+<h4 id="例：-7"><a href="#例：-7" class="headerlink" title="例："></a>例：</h4><table>
+<thead>
+<tr>
+<th align="left">居左</th>
+<th align="center">居中</th>
+<th align="right">居右</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="center">单元格</td>
+<td align="right">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="center">单元格</td>
+<td align="right">单元格</td>
+</tr>
+</tbody></table>
+<center>
+    <img src="https://z3.ax1x.com/2021/08/16/f2Hzo6.png" width="100" height="100">
+</center>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git的常用指令</title>
+    <url>/2022/05/20/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<p>git 提交/推送/拉取等一些常用的指令</p>
+<span id="more"></span>
+
+<h2 id="一、提交代码到仓库"><a href="#一、提交代码到仓库" class="headerlink" title="一、提交代码到仓库"></a>一、提交代码到仓库</h2><h3 id="添加到本地仓库"><a href="#添加到本地仓库" class="headerlink" title="添加到本地仓库"></a>添加到本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//添加指定文件</span><br><span class="line">$ git add <span class="tag">&lt;<span class="name">xxx</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//添加全部文件</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交到本地仓库，并添加描述信息"><a href="#提交到本地仓库，并添加描述信息" class="headerlink" title="提交到本地仓库，并添加描述信息"></a>提交到本地仓库，并添加描述信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、拉取代码到本地"><a href="#二、拉取代码到本地" class="headerlink" title="二、拉取代码到本地"></a>二、拉取代码到本地</h2><h3 id="克隆或拉取代码"><a href="#克隆或拉取代码" class="headerlink" title="克隆或拉取代码"></a>克隆或拉取代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//克隆</span><br><span class="line">$ git clone http://xxx</span><br><span class="line"></span><br><span class="line">//拉取</span><br><span class="line">$ git pull https://xxx</span><br><span class="line"></span><br><span class="line">//拉取关联仓库分支的代码</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、远程仓库"><a href="#三、远程仓库" class="headerlink" title="三、远程仓库"></a>三、远程仓库</h2><h3 id="添加远程仓库绑定"><a href="#添加远程仓库绑定" class="headerlink" title="添加远程仓库绑定"></a>添加远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote add origin <span class="tag">&lt;<span class="name">ssh</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解除远程仓库绑定"><a href="#解除远程仓库绑定" class="headerlink" title="解除远程仓库绑定"></a>解除远程仓库绑定</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote rm origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看绑定的仓库信息"><a href="#查看绑定的仓库信息" class="headerlink" title="查看绑定的仓库信息"></a>查看绑定的仓库信息</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、本地仓库"><a href="#四、本地仓库" class="headerlink" title="四、本地仓库"></a>四、本地仓库</h2><h3 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><p>直接删除 .git 文件夹即可，默认情况下 .git 文件夹是 <em>(隐藏的)</em></p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis的安装</title>
+    <url>/2022/01/10/redis-install/</url>
+    <content><![CDATA[<p>记录redis环境的安装说明（服务器端）</p>
+<p>用于部署无远Enhancer开发的系统（首次部署应用时所需准备的基础环境配置步骤，后续应用部署不需要）</p>
+<span id="more"></span>
+
+<img src="https://s4.ax1x.com/2022/01/10/7ErYuD.png" alt="redis" width="auto" height="50">  
+
+<h2 id="redis-Windows环境下的安装"><a href="#redis-Windows环境下的安装" class="headerlink" title="redis Windows环境下的安装"></a>redis Windows环境下的安装</h2><p>github上有redis的安装包：<a href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a><br>这里主要介绍的是redis.zip的安装。</p>
+<h5 id="1、下载redis："><a href="#1、下载redis：" class="headerlink" title="1、下载redis："></a>1、下载redis：</h5><p>首先下载redis for windows.zip，redis支持32/64位，但github上一般都是64位的。下载解压后将解压好的文件夹放到你要安装的目录下。<br><img src="https://s4.ax1x.com/2022/01/10/7ErPNn.png" alt="redis" width="auto" height="300"></p>
+<h5 id="2、执行安装："><a href="#2、执行安装：" class="headerlink" title="2、执行安装："></a>2、执行安装：</h5><p>cmd进入redis所在的安装文件夹运行以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+<p>tips:不想每次都cmd进入安装文件夹的话可以将redis的安装路径添加至环境变量中，输入之后显示以下界面 👇<br><img src="https://s4.ax1x.com/2022/01/10/7ErVjU.png" alt="redis" width="auto" height="300"></p>
+<p>这时候再打开一个cmd窗口，切换到安装目录，为redis设置键值对 👇</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379   // 6379 为默认端口号，可按照需求设置端口号</span><br><span class="line">set myKey abc                       //设置键值对</span><br><span class="line">get myKey                          // 测试取出键值对</span><br></pre></td></tr></table></figure>
+<img src="https://s4.ax1x.com/2022/01/10/7Erihq.png" alt="redis" width="auto" height="150">
+
+<p>这时就已经完成redis的安装了，但是每次启动redis都需要输入<code>redis-server.exe redis.windows.conf</code>,而且cmd窗口不能关闭，services.msc中也没有redis的服务。<br>这时就需要将redis服务添加进windows中了。</p>
+<h5 id="3、添加redis服务："><a href="#3、添加redis服务：" class="headerlink" title="3、添加redis服务："></a>3、添加redis服务：</h5><p>cmd切换到redis的安装目录，执行以下代码，添加redis服务（我这里已经添加了） 👇</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf</span><br></pre></td></tr></table></figure>
+<img src="https://s4.ax1x.com/2022/01/10/7ErA3V.png" alt="redis" width="auto" height="150">
+
+<p>之后到services.msc中查看，已经将redis服务添加，之后直接在这里启动redis服务即可使用，并且是开机自启。<br><img src="https://s4.ax1x.com/2022/01/10/7Erp7j.png" alt="redis" width="auto" height="200"></p>
+<h5 id="4、修改redis的端口号"><a href="#4、修改redis的端口号" class="headerlink" title="4、修改redis的端口号"></a>4、修改redis的端口号</h5><p>打开redis的安装目录，打开redis.windows.conf文件，找到port,将端口号更改为需要的端口号。<br><img src="https://s4.ax1x.com/2022/01/10/7EreuF.png" alt="redis" width="auto" height="300"></p>
+<p>之后重启redis服务即可。</p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>modbus串口通信</title>
+    <url>/2023/02/25/modbus%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<p>浅浅记录一下，之前做老化柜电压电流，以及电阻测试仪数据采集用到的串口通信</p>
+<p>使用python serial模块进行的串口通信。</p>
+<span id="more"></span>
+
+<h3 id="serial模块的使用方法"><a href="#serial模块的使用方法" class="headerlink" title="serial模块的使用方法"></a>serial模块的使用方法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入serial模块</span></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口，GNU / Linux上的/ dev / ttyUSB0 等 或 Windows上的 COM3 等</span></span><br><span class="line"><span class="comment"># 波特率，标准值之一：50,75,110,134,150,200,300,600,1200,1800,2400,4800,9600,19200,38400,57600,115200</span></span><br><span class="line"><span class="comment"># 超时设置,None：永远等待操作，0为立即返回请求结果，其他值为等待超时时间(单位为秒）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openPort</span>(<span class="params">portx, bps, timeout</span>):</span></span><br><span class="line">  ret = <span class="literal">False</span></span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 打开串口，并得到串口对象</span></span><br><span class="line">    ser = serial.Serial(portx, bps, timeout = timeout)</span><br><span class="line">    <span class="comment"># 判断串口是否打开</span></span><br><span class="line">    <span class="keyword">if</span>(ser.is_open):</span><br><span class="line">      ret = <span class="literal">True</span></span><br><span class="line">  <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="comment"># 如果异常则输出异常原因</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---Error---&quot;</span>, e)</span><br><span class="line">  <span class="keyword">return</span> ser, ret</span><br></pre></td></tr></table></figure>
+
+<h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入serial模块</span></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  ser = serial.Serial(<span class="string">&#x27;COM1&#x27;</span>, <span class="number">9600</span>, <span class="literal">None</span>)</span><br><span class="line">  <span class="keyword">if</span>(ser.is_open):</span><br><span class="line">    aa = <span class="string">&#x27;46 45 54 43 68 3F 0A&#x27;</span>  <span class="comment"># 这里使用十六进制数，数据的类型根据对应的协议进行更改</span></span><br><span class="line">    bb = <span class="built_in">bytes</span>.fromhex(aa)  <span class="comment"># 数据转换为bytes类型</span></span><br><span class="line">    result = ser.write(bb)  <span class="comment"># 发送数据</span></span><br><span class="line">    <span class="built_in">print</span> result  <span class="comment"># 查看发送数据</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入serial模块</span></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  ser = serial.Serial(<span class="string">&#x27;COM1&#x27;</span>, <span class="number">9600</span>, <span class="literal">None</span>)</span><br><span class="line">  <span class="keyword">if</span>(ser.is_open):</span><br><span class="line">    count = ser.in_waiting  <span class="comment"># 返回数据的字节数</span></span><br><span class="line">    data = ser.read(count)  <span class="comment"># 使用read接收数据</span></span><br><span class="line">    <span class="built_in">print</span> data  <span class="comment"># 输出接收的数据</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="serial模块常用的方法"><a href="#serial模块常用的方法" class="headerlink" title="serial模块常用的方法"></a>serial模块常用的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ser.open()</td>
+<td align="left">打开端口</td>
+</tr>
+<tr>
+<td align="left">ser.close()</td>
+<td align="left">关闭端口</td>
+</tr>
+<tr>
+<td align="left">ser.is_open</td>
+<td align="left">查看端口是否打开</td>
+</tr>
+<tr>
+<td align="left">ser.write()</td>
+<td align="left">发送数据</td>
+</tr>
+<tr>
+<td align="left">ser.read()</td>
+<td align="left">接收数据，可指定字节数，默认为1</td>
+</tr>
+<tr>
+<td align="left">ser.readline()</td>
+<td align="left">接收一行数据</td>
+</tr>
+<tr>
+<td align="left">ser.read_all</td>
+<td align="left">接收全部数据</td>
+</tr>
+<tr>
+<td align="left">ser.in_waitting</td>
+<td align="left">返回数据的字节数</td>
+</tr>
+<tr>
+<td align="left">ser.flush()</td>
+<td align="left">等待所有数据发出</td>
+</tr>
+<tr>
+<td align="left">ser.flushInput</td>
+<td align="left">丢弃接收缓存中的所有数据</td>
+</tr>
+<tr>
+<td align="left">ser.flushOutput()</td>
+<td align="left">终止当前发送操作，并丢弃发送缓存中的数据</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>serial</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql server查询对字符串进行截取</title>
+    <url>/2022/08/31/sql-server%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E6%88%AA%E5%8F%96/</url>
+    <content><![CDATA[<h1 id="substring的用法"><a href="#substring的用法" class="headerlink" title="substring的用法"></a>substring的用法</h1><p> sql server中，使用查询时，提出一个字段中的其中一部分。</p>
+<p> 例如：我们需要将字符串’abc123efg’中的’123’提取出来，则可以用substring来实现：</p>
+<p> <code>select substring(&#39;abc123efg&#39;,4,3)</code></p>
+<p> 结果：’123’</p>
+<h3 id="函数解析：substring-字段-字段第一个字符位置-字段截取长度"><a href="#函数解析：substring-字段-字段第一个字符位置-字段截取长度" class="headerlink" title="函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)"></a>函数解析：substring( 字段, 字段第一个字符位置, 字段截取长度)</h3><h1 id="charindex的用法"><a href="#charindex的用法" class="headerlink" title="charindex的用法"></a>charindex的用法</h1><p> 但是，有些时候，需求复杂，字符位置也不是固定的，长度也不固定。此时，我们可以用“charindex”这个函数来解决。</p>
+<p> charindex用于定位某个特定字符在该字符串中的位置。</p>
+<h3 id="函数解析：charindex-‘特定字符’-字段名称"><a href="#函数解析：charindex-‘特定字符’-字段名称" class="headerlink" title="函数解析：charindex( ‘特定字符’, 字段名称 )"></a>函数解析：charindex( ‘特定字符’, 字段名称 )</h3>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>sql server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue基本指令</title>
+    <url>/2022/05/05/vue%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="Mustache语法：-message"><a href="#Mustache语法：-message" class="headerlink" title="Mustache语法：{ { message } }"></a>Mustache语法：{ { message } }</h1><h1 id="vue基础数据-👇"><a href="#vue基础数据-👇" class="headerlink" title="vue基础数据 👇"></a>vue基础数据 👇</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&#x27;&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;&#x27;</span>,</span><br><span class="line">            <span class="attr">num</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">imgUrl</span>: <span class="string">&#x27;https://z3.ax1x.com/2021/08/16/f2Hzo6.png&#x27;</span>,</span><br><span class="line">            <span class="attr">movies</span>:[<span class="string">&#x27;哈利波特&#x27;</span>,<span class="string">&#x27;钢铁侠&#x27;</span>,<span class="string">&#x27;海上钢琴师&#x27;</span>,<span class="string">&#x27;蜘蛛侠&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><p>“v-once” ：数据只渲染一次，不随着数据变化而变化。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><p>“v-html” ：解析服务器返回的数据，并以链接的形式在dom上展示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-html</span>=<span class="string">&quot;url&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><p>“v-text” ：与效果一致，但无法在后面拼接文本</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span>此处拼接文本无效<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h2><p>“v-pre” ：不解析，直接显示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-pre</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h2><p>“v-cloak” ：在vue未加载时，隐藏该元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-cloak</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><p>“v-on” ：元素操作控制，v-on:操作=”函数”</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;num&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 常规写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 语法糖写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>“v-for” ：循环</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-for=&quot;自定义名称 in 循环对象名称&quot; --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- v-for=&quot;(自定义名称, index) in 循环对象名称&quot;，index可以遍历数组下标 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in movies&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>“v-bind” ：绑定元素属性，直接调用服务器返回的数据进行动态展示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">&quot;imgUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> <span class="comment">&lt;!-- 常规写法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;imgUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> <span class="comment">&lt;!-- 语法糖写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>“v-bind”对象语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- css部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.active</span>&#123;<span class="attribute">color</span>: skyblue;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.error</span>&#123;<span class="attribute">color</span>: red;&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 单独绑定一个类 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;active&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用方法，绑定多个类，并控制开关 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--写法：v-bind:class=&quot;&#123;类名1: bool值, 类名2: bool值&#125;&quot; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;&#123;active: isActive, error: isError&#125;&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 用function方法获取class --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125; 3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue!&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;active&#x27;</span>,</span><br><span class="line">            <span class="attr">isActice</span>: <span class="string">&#x27;true&#x27;</span>,</span><br><span class="line">            <span class="attr">isError</span>: <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="comment">// 此处调用本对象app内的&quot;isActive&quot;和&quot;isError&quot;，需要指向&quot;this&quot;</span></span><br><span class="line">                <span class="keyword">return</span> &#123;<span class="attr">active</span>: <span class="built_in">this</span>.isActive, <span class="attr">error</span>: <span class="built_in">this</span>.isError&#125;;</span><br><span class="line">                <span class="comment">// 返回值 &#123;active: isActive, error: isError&#125;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>v-bind数组语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用数组作为类名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;[active,error]&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">:class</span>=<span class="string">&quot;getClass()&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        <span class="attr">el</span>: #app,</span><br><span class="line">        <span class="attr">data</span>: &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;Hello Vue&#x27;</span>,</span><br><span class="line">            <span class="attr">active</span>: <span class="string">&#x27;aaa&#x27;</span>,</span><br><span class="line">            <span class="attr">error</span>: <span class="string">&#x27;bbb&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>: &#123;</span><br><span class="line">            <span class="attr">getClass</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> [<span class="built_in">this</span>.active, <span class="built_in">this</span>.error];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue组件化的初级使用</title>
+    <url>/2022/06/22/vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E5%88%9D%E7%BA%A7%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="vue的组件化的初级使用"><a href="#vue的组件化的初级使用" class="headerlink" title="vue的组件化的初级使用"></a>vue的组件化的初级使用</h1><h2 id="1-创建组件构造器对象："><a href="#1-创建组件构造器对象：" class="headerlink" title="1.创建组件构造器对象："></a>1.创建组件构造器对象：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpn = Vue.extend(&#123;</span><br><span class="line">    <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">                &lt;h2&gt;我是标题&lt;/h2&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容1&lt;/p&gt;</span></span><br><span class="line"><span class="string">                &lt;p&gt;我是内容2&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-注册组件"><a href="#2-注册组件" class="headerlink" title="2.注册组件"></a>2.注册组件</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.全局组件的注册方法，可以在多个Vue实例下使用</span></span><br><span class="line"><span class="comment">// Vue.component(&#x27;组件的标签名&#x27;,组件名)</span></span><br><span class="line">Vue.component(<span class="string">&#x27;my-cpn&#x27;</span>,cpn)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.局部注册组件，在构建的new Vue中使用components属性注册</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="attr">components</span>:&#123;</span><br><span class="line">        <span class="comment">// 组件的标签名: 组件名</span></span><br><span class="line">        my-cpn2: cpn</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-使用组件"><a href="#3-使用组件" class="headerlink" title="3.使用组件"></a>3.使用组件</h2><p>在el绑定的div中使用组件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;app&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-cpn2</span>&gt;</span><span class="tag">&lt;/<span class="name">my-cpn2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue脚手架分析</title>
+    <url>/2022/12/20/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%86%E6%9E%90-1/</url>
+    <content><![CDATA[<p>vue脚手架文件结构分析</p>
+<span id="more"></span>
+
+<h1 id="vue脚手架分析"><a href="#vue脚手架分析" class="headerlink" title="vue脚手架分析"></a>vue脚手架分析</h1><h2 id="一-初始化脚手架"><a href="#一-初始化脚手架" class="headerlink" title="一. 初始化脚手架"></a>一. 初始化脚手架</h2><h3 id="1-全局安装-vue-cli"><a href="#1-全局安装-vue-cli" class="headerlink" title="1. 全局安装@vue/cli"></a>1. 全局安装@vue/cli</h3><p><code>npm install -g @vue/cli</code></p>
+<p>注意，此前若安装过旧版本的vue，请清理干净后，再行安装。</p>
+<p>tips: 可使用此指定检查vue是否安装成功 <code>vue -V</code></p>
+<h3 id="2-切换到要创建项目的目录，使用命令创建项目"><a href="#2-切换到要创建项目的目录，使用命令创建项目" class="headerlink" title="2. 切换到要创建项目的目录，使用命令创建项目"></a>2. 切换到要创建项目的目录，使用命令创建项目</h3><p><code>vue create xxx</code></p>
+<h3 id="3-启动项目"><a href="#3-启动项目" class="headerlink" title="3. 启动项目"></a>3. 启动项目</h3><p><code>npm run serve</code></p>
+<h2 id="二-脚手架文件结构"><a href="#二-脚手架文件结构" class="headerlink" title="二. 脚手架文件结构"></a>二. 脚手架文件结构</h2><pre><code>├── node_modules 
+├── public
+│   ├── favicon.ico: 页签图标
+│   └── index.html: 主页面
+├── src
+│   ├── assets: 存放静态资源
+│   │   └── logo.png
+│   │── component: 存放组件
+│   │   └── HelloWorld.vue
+│   │── App.vue: 汇总所有组件
+│   │── main.js: 入口文件
+├── .gitignore: git版本管制忽略的配置
+├── babel.config.js: babel的配置文件
+├── package.json: 应用包配置文件 
+├── README.md: 应用描述文件
+├── package-lock.json：包版本控制文件
+</code></pre>
+<h2 id="三-主要文件结构分析"><a href="#三-主要文件结构分析" class="headerlink" title="三. 主要文件结构分析"></a>三. 主要文件结构分析</h2><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.js是整个项目的入口文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处引入的默认为vue.runtime.xxx.js（运行版的Vue，只包含核心功能，没有模板解析器）</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>  <span class="comment">// 引入vue，</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>  <span class="comment">// 引入App组件，它是所有组件的父组件</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>  <span class="comment">// 关闭Vue生产提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Vue实例对象--vm</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="comment">// 因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，</span></span><br><span class="line">  <span class="comment">// 需要使用render函数接收到的createElement函数去指定具体内容。</span></span><br><span class="line">  <span class="attr">render</span>:<span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// App.vue，汇总所有组件，其余组件放置于 components文件夹中，结构与此类似</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 模板区域，因为模板只能有一个根，所以要用一个div或其他标签包裹 --&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // Vue、js区域，此处的代码需要暴露，main.js才能使用</span><br><span class="line">  export default&#123;</span><br><span class="line">    name:&#x27;App&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  /* 样式区域 */</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自定义旅游地图锚点</title>
+    <url>/2023/03/10/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%85%E6%B8%B8%E5%9C%B0%E5%9B%BE%E9%94%9A%E7%82%B9/</url>
+    <content><![CDATA[<p>使用透明view，实现旅游地图上的锚点链接</p>
+<span id="more"></span>
+
+<p>最近在做“游阅石龙”小程序的时候，做到了旅游地图，我希望能在地图上点击特定地点，跳转或弹窗，介绍这个地点的介绍。就浅浅记录一下功能实现的方法吧。</p>
+<p>首先，放置地图图片需要一个容器 <code> &lt;movable-view&gt;</code>，这是一个可缩放、移动的视图容器，而这个容器需要另外一个容器，限制它的移动区域，那就是<code>&lt;movable-area&gt;</code>了</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- imdex.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mapBox&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- direction：movable-view的移动方向</span></span><br><span class="line"><span class="comment">    scale：是否支持双指缩放</span></span><br><span class="line"><span class="comment">    scale-min max value：缩放最小值 缩放最大值 缩放默认 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">direction</span>=<span class="string">&quot;all&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;true&quot;</span> <span class="attr">scale-min</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">scale-max</span>=<span class="string">&quot;7&quot;</span> <span class="attr">scale-value</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">imgae</span> <span class="attr">src</span>=<span class="string">&quot;/pic/pic.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h4><blockquote>
+<p>movable-area必须设置width和height属性，不设置默认为10*10px</p>
+</blockquote>
+<blockquote>
+<p>其余设定可以直接参考微信开放文档</p>
+</blockquote>
+<p>这样基本框架就搭好了，地图图片可以在区域内随意滑动、缩放。</p>
+<!-- # 这里放张效果图 -->
+<p><video src="1.mp4" controls="controls" width="300" height="auto"></video></p>
+<p>接下来就是做图片上的锚点链接了</p>
+<p>做这个锚点链接其实很多方法，我这里也是参考了社区大佬的方式，取巧实现的。那就是使用一个透明的<code>&lt;view&gt;</code>，定位到地图上的点位，实现可点击锚点。</p>
+<h3 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- imdex.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mapBox&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">direction</span>=<span class="string">&quot;all&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;true&quot;</span> <span class="attr">scale-min</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">scale-max</span>=<span class="string">&quot;7&quot;</span> <span class="attr">scale-value</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">imgae</span> <span class="attr">src</span>=<span class="string">&quot;/pic/pic.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 浮动锚点，这里偷懒用的微信开发者工具里的可视化，所以样式直接附在元素内了 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;bindtapIcon&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;left: 500rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        top: 880rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        position: fixed; </span></span></span><br><span class="line"><span class="string"><span class="tag">        width: 100rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        height: 190rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        display: block; </span></span></span><br><span class="line"><span class="string"><span class="tag">        box-sizing: border-box&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* index.wxss */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* mapBox部分 注意所有尺寸使用 rpx 自适应*/</span></span><br><span class="line"><span class="selector-class">.mapBox</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">630</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">860</span>rpx;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">4em</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">border</span>: .<span class="number">8px</span> dashed <span class="built_in">rgb</span>(<span class="number">75</span>, <span class="number">146</span>, <span class="number">99</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="comment">/* 隐藏图片溢出区域 */</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movable-area&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">860</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movable-view&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1252</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1712</span>rpx;</span><br><span class="line">  <span class="comment">/* 观察区域大小 */</span></span><br><span class="line">  <span class="comment">/* border: 1px solid red; */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mapBox</span> image&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1712</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1252</span>rpx;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">25%</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>);</span><br><span class="line">  <span class="comment">/* 观察图片区域 */</span></span><br><span class="line">  <span class="comment">/* border: 1px solid red; */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 锚点 */</span></span><br><span class="line"><span class="selector-class">.bindtapIcon</span>&#123;</span><br><span class="line">  <span class="comment">/* 使用fixed定位锚点 */</span></span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="comment">/* 给定初始大小 */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="comment">/* 用于观察锚点位置，取消后锚点透明 */</span></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">85</span>, <span class="number">216</span>, <span class="number">73</span>, <span class="number">0.8</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到这里，锚点的设置基本就做好了，可以直接用微信开发者工具的可视化定位锚点。注意：所有定位的单位需要使用<code>“rpx”</code>等自适应的属性，否则不同机型大小会影响锚点的定位。</p>
+<!-- # 这里放张效果图 -->
+<p><video src="2.mp4" controls="controls" width="300" height="auto"></video></p>
+<p>接下来就是页面跳转了</p>
+<h3 id="做法：-1"><a href="#做法：-1" class="headerlink" title="做法："></a>做法：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- imdex.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;mapBox&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">direction</span>=<span class="string">&quot;all&quot;</span> <span class="attr">scale</span>=<span class="string">&quot;true&quot;</span> <span class="attr">scale-min</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">scale-max</span>=<span class="string">&quot;7&quot;</span> <span class="attr">scale-value</span>=<span class="string">&quot;0.5&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">imgae</span> <span class="attr">src</span>=<span class="string">&quot;/pic/pic.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;widthFix&quot;</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 浮动锚点，这里偷懒用的微信开发者工具里的可视化，所以样式直接附在元素内了 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;bindtapIcon&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">&quot;left: 500rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        top: 880rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        position: fixed; </span></span></span><br><span class="line"><span class="string"><span class="tag">        width: 100rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        height: 190rpx; </span></span></span><br><span class="line"><span class="string"><span class="tag">        display: block; </span></span></span><br><span class="line"><span class="string"><span class="tag">        box-sizing: border-box&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">bindtap</span>=<span class="string">&quot;mapSwitchTab&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">data-id</span>=<span class="string">&quot;&#123;&#123;locationInfo[0].id&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 指定方法，data-id传值 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">movable-area</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="comment">// 定义锚点数据</span></span><br><span class="line">    <span class="attr">locationInfo</span>:[</span><br><span class="line">      &#123;<span class="attr">id</span>:<span class="string">&quot;001&quot;</span>, <span class="attr">title</span>:<span class="string">&quot;杠空间&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 地图锚点跳转介绍页面</span></span><br><span class="line">  <span class="attr">mapSwitchTab</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 查看id</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.currentTarget.dataset.id)</span><br><span class="line">    <span class="built_in">this</span>.setData(&#123;<span class="attr">value</span>:e.currentTarget.dataset.id&#125;)</span><br><span class="line">    wx.navigateTo(&#123;</span><br><span class="line">      <span class="comment">// 跳转地址，传参</span></span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;/pages/location/location?value=&#x27;</span>+<span class="built_in">this</span>.data.value,</span><br><span class="line">      <span class="function"><span class="title">success</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;跳转成功&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// location.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  <span class="attr">data</span>:&#123;</span><br><span class="line">    <span class="attr">locationInfo</span>:[</span><br><span class="line">      &#123;<span class="attr">id</span>:<span class="string">&#x27;001&#x27;</span>, <span class="attr">title</span>:<span class="string">&quot;杠空间&quot;</span>, <span class="attr">introduction</span>:<span class="string">&quot;这是一段简介&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 加载时接收参数，展示相对应的数据</span></span><br><span class="line">  <span class="function"><span class="title">onLoad</span>(<span class="params">options</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; <span class="built_in">this</span>.data.locationInfo.length; index++) &#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">this</span>.data.locationInfo[index].id === options.value)&#123;</span><br><span class="line">        <span class="built_in">this</span>.setData(&#123;<span class="attr">value</span>:options.value&#125;) </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><video src="3.mp4" controls="controls" width="300" height="auto"></video></p>
+<p>到这里基本就做完啦，当然数据最好还是上数据库，不过开发前期，测试使用静态数据也足够了，嘻嘻。</p>
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+</search>
